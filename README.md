@@ -15,16 +15,41 @@ Things you may want to cover:
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
+|name|string|null: false|
 |nickname|string|null: false|
+|furigana|string|null: false|
 |e_mail|string|null: false, unique: true|
 |password|string|null: false|
 |birthday|string|null: false|
-|tell|integer|null: false|
+|tell|integer|null: false, unique: true|
 |image|string||
 |text|text||
 
 ### Association
 - has_many :products
+- has_many :comments
+- has_many :likes
+- has_one :street_adress
+- has_many :buyers
+- has_many :sellers
+- has_one :payment
+- has_many :evaluations
+
+## buyersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|foreign_key: true|
+
+### Association
+-belongs_to :user
+
+## sellersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|foreign_key: true|
+
+### Association
+-belongs_to :user
 
 ## productsテーブル
 |Column|Type|Options|
@@ -32,47 +57,76 @@ Things you may want to cover:
 |name|string|null: false, index: true|
 |price|integer|null: false|
 |status|string|null: false|
+|delivery_price|string|null: false|
+|delivery_way|string|null: false|
+|scheduled|string|null: false|
 |user_id|integer|foreign_key: true|
+|buyer_id|integer|foreign_key: true|
+|seller_id|integer|foreign_key: true|
 
 ### Association
 - belongs_to :user
+- has_many :comments
+- has_many :likes
+- has_one :street_adress
+- has_many :images
+
+## imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|product_id|integer|foreign_key: true|
+
+### Association
+- belongs_to :poduct
 
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|foreign_key: true|
 |product_id|integer|foreign_key: true|
-|text|text||
+|text|text|null: false|
 
 ### Association
-- belong_to :user
-- belong_to :comment
+- belongs_to :user
+- belongs_to :product
 
 ## likesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|foreign_key: true|
 |product_id|integer|foreign_key: true|
 
 ### Association
+- belongs_to :product
 
-## atreet_adressテーブル
+## evaluationsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|foreign_key: true|
+|status|string|null: false|
+
+### Association
+- belongs_to :user
+
+## street_adressesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|foreign_key: true|
+|product_id|integer|foreign_key: true|
 |prefecture|string|null: false|
 |city|string|null: false|
 |postal_code|integer|null: false|
-|building_name|string|null: false|
-|adress|integer|null: false|
+|building_name|string||
+|adress|string|null: false|
 
 ### Association
+- belongs_to :user
+- belongs_to :poduct
 
 ## sns_credential
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|foreign_key: true|
-|provider|||
+|uid|string|null: false|
+|provider|string|null: false|
 
 ### Association
 
@@ -80,9 +134,9 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|foreign_key: true|
-|product_id|integer|foreign_key: true|
 
 ### Association
+- belongs_to :user
 
 * Database initialization
 
