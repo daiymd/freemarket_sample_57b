@@ -43,7 +43,7 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|null: false, index: true|
 |price|integer|null: false|
-|status|string|null: false|
+|status|integer|null: false|
 |delivery_price|string|null: false|
 |delivery_way|string|null: false|
 |scheduled|string|null: false|
@@ -91,7 +91,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|foreign_key: true|
-|status|string|null: false|
+|status|integer|null: false|
 
 ### Association
 - belongs_to :user
