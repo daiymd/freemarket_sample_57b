@@ -24,11 +24,12 @@ Things you may want to cover:
 |tell|integer|null: false, unique: true|
 |image|string||
 |text|text||
-|buyer_id|integer|foreign_key: true|
-|seller_id|integer|foreign_key: true|
+|buyer_id|integer||
+|seller_id|integer||
 
 ### Association
-- has_many :products
+- has_many :products, through: :transactions
+- has_many :transactions
 - has_many :comments
 - has_many :likes
 - has_one :street_adress
@@ -46,15 +47,15 @@ Things you may want to cover:
 |delivery_price|string|null: false|
 |delivery_way|string|null: false|
 |scheduled|string|null: false|
-|buyer_id|integer|foreign_key: true|
-|seller_id|integer|foreign_key: true|
 
 ### Association
-- belongs_to :user
+- belongs_to :user, through: :transactions
+- has_one :transactions
 - has_many :comments
 - has_many :likes
 - has_one :street_adress
 - has_many :images
+
 
 ## imagesテーブル
 |Column|Type|Options|
@@ -125,6 +126,18 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
+
+## transactionsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|buyer_id|integer|foreign_key: true|
+|seller_id|integer|foreign_key: true|
+|product_id|integer|foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :product
+
 
 * Database initialization
 
