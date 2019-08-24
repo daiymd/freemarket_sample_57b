@@ -24,6 +24,8 @@ Things you may want to cover:
 |tell|integer|null: false, unique: true|
 |image|string||
 |text|text||
+|buyer_id|integer|foreign_key: true|
+|seller_id|integer|foreign_key: true|
 
 ### Association
 - has_many :products
@@ -35,22 +37,6 @@ Things you may want to cover:
 - has_one :payment
 - has_many :evaluations
 
-## buyersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|foreign_key: true|
-
-### Association
--belongs_to :user
-
-## sellersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|foreign_key: true|
-
-### Association
--belongs_to :user
-
 ## productsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -60,7 +46,6 @@ Things you may want to cover:
 |delivery_price|string|null: false|
 |delivery_way|string|null: false|
 |scheduled|string|null: false|
-|user_id|integer|foreign_key: true|
 |buyer_id|integer|foreign_key: true|
 |seller_id|integer|foreign_key: true|
 
@@ -75,6 +60,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |product_id|integer|foreign_key: true|
+|image|string|null: false|
 
 ### Association
 - belongs_to :poduct
@@ -94,6 +80,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |product_id|integer|foreign_key: true|
+|user_id|integer|foreign_key: true|
 
 ### Association
 - belongs_to :product
@@ -134,6 +121,8 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|foreign_key: true|
+|customer_id|string|null: false|
+|card_id|string|null: false|
 
 ### Association
 - belongs_to :user
