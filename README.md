@@ -84,6 +84,7 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :product
+- belongs_to :user
 
 ## evaluationsテーブル
 |Column|Type|Options|
@@ -98,7 +99,6 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|foreign_key: true|
-|product_id|integer|foreign_key: true|
 |prefecture|string|null: false|
 |city|string|null: false|
 |postal_code|integer|null: false|
@@ -107,7 +107,6 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
-- belongs_to :poduct
 
 ## sns_credential
 |Column|Type|Options|
