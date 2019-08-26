@@ -5,4 +5,5 @@ class Product < ApplicationRecord
   # has_many :likes
   # has_one :street_adress
   # has_many :images
+  mount_uploader :image, ImageUploader
 end
