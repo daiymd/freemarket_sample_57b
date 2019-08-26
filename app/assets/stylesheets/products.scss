@@ -1,3 +1,210 @@
-// Place all the styles related to the products controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+.link {
+  color: black;
+  text-decoration: none;
+}
+
+.link_blue {
+  color: #0099e8;
+  text-decoration: none;
+}
+
+.cell {
+  text-decoration: none;
+  color: #EEEEEE;
+  font-size: 12px;
+}
+
+.top-page_content {
+  // width: 100vw;
+  .topic {
+    height: 400px;
+    background-color: aliceblue;
+    .img {
+      max-width: 680px;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+  .main_content {
+    background-color: #f5f5f5;
+    .products {
+      min-height: 500px;
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 40px 0;
+      &_head {
+        font-size: 28px;
+        text-align: center;
+      }
+      &_contain {
+        &_name {
+          text-align: center;
+          margin: 26px 11px;
+          font-size: 22px;
+        }
+        &_item {
+          @include clearfix();
+          &-box {
+            position: relative;
+            float: left;
+            width: 210px;
+            height: 300px;
+            margin: 5px 0 0 20px;
+            background-color: white;
+            &-image {
+              width: 210px;
+              height: 190px;
+            }
+            &-body {
+              position: relative;
+              width: 210px;
+              height: 110px;
+              padding: 16px;
+              &-name {
+                font-size: 16px;
+                height: 3em;
+              }
+              &-under {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 5px;
+                &-price {
+                  
+                }
+                &-likes {
+                  
+                }
+              }
+            }
+          }
+        }
+        &_view {
+          text-align: right;
+          padding: 20px 30px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .footer-top {
+    height: 250px;
+    background-image: url('footer-image.jpg');
+    background-position: center;
+    background-size: cover;
+    &_content {
+      position: relative;
+      display: flex;
+      height: 250px;
+      width: 750px;
+      margin: 0 auto;
+      &-inner {
+        max-width: 420px;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        color: white;
+        &-text {
+          font-size: 24px;
+        }
+        &-text2 {
+          font-size: 35px;
+        }
+        &-icon {
+          display: flex;
+          margin-top: 20px;
+          &-app {
+            margin-left: 20px;
+            margin-top: 15px;
+            display: flex;
+            .icon-phone {
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+    .phone {
+      margin: 0;
+      position: absolute;
+      top:0;
+      right: 0;
+    }
+    }
+  }
+  .footer-bottom {
+    height: 400px;
+    background-color: rgb(33, 33, 33);
+    color: #fff;
+    &_head {
+      height: 300px;
+      width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      li {
+        margin-top: 7px;
+      }
+      &_cell {
+        width: 23%;
+        margin-top: 18px;
+        padding-right: 20px;
+        &-link {
+          display: inline-block;
+          font-size: 30px;
+          .icon {
+            color: #f5f5f5;
+            margin: 18px 18px 0 0;
+          }
+        }
+        .footer-cell {
+          font-size: 16px;
+          font-weight: 700;
+        }
+      }
+      &_cell-width {
+        width: 45%;
+        margin-top: 18px;
+        padding-right: 20px; 
+        .footer-cell {
+          font-size: 16px;
+          font-weight: 700;
+        }
+        &-inner {
+          display: flex;
+          justify-content: space-around;
+        }
+      }
+      &_cell-country {
+        width: auto;
+        margin-top: 18px;
+        padding-right: 20px; 
+        .footer-cell {
+          font-size: 16px;
+          font-weight: 700;
+        }
+      }
+    }
+    &_under {
+      height: 30px;
+      max-width: 1000px;
+      margin: 30px auto 20px;
+      display: flex;
+      &-right {
+        font-size: 12px;
+        width: 850px;
+        margin: 8px 0 0 10px;
+        text-align: center;
+      }
+    }
+  }
+}
