@@ -1,0 +1,76 @@
+.header {
+  position: relative;
+  width: 100vw;
+  .header-inner {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 8px;
+    &_top {
+      display: flex;
+      height: 40px;
+      &-title {
+        width: 20%;
+      }
+      &-search {
+        float: right;
+        margin-left: 40px;
+        height: 40px;
+        width: 80%;
+        .search {
+          .search-form {
+            position: relative;
+            padding: 0 25px 0 10px;
+            height: 40px;
+            width: 100%;
+            border-radius: 4px;
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+          }
+          .search-icon {
+            position: absolute;
+            right: 10px;
+            bottom: 62px;
+          }
+        }
+      }
+    }
+    &_bottom {
+      height: 40px;
+      margin-top: 10px;
+      line-height: 30px;
+      &-left {
+        float: left;
+        display: flex;
+        .icon-red {
+          color: red;
+        }
+        &-category {
+          margin-right: 10px;
+        }
+        &-brand {
+          margin-left: 10px;
+        }
+      }
+      &-right {
+        float: right;
+        display: flex;
+        .icon-grey {
+          color: grey;
+        }
+        &-like {
+          margin-right: 10px;
+        }
+        &-news {
+          margin: 0 10px;
+        }
+        &-todo {
+          margin: 0 10px;
+        }
+        &-mypage {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
