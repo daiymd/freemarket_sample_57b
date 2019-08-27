@@ -1,0 +1,22 @@
+.top-page_content
+  = render "header"
+  .topic
+    %img{src: "//www-mercari-jp.akamaized.net/assets/img/featured/camp/index/index_keyvisual.png?575670517", class: "img"}
+  .main_content
+    .products
+      .products_head
+        ピックアップ
+      .products_contain
+        .products_contain_name
+          = link_to "" , class: "link_blue" do
+            全ての商品
+        .products_contain_item
+          = render "products"
+          = render "products"
+          = render "products"
+          = render "products"
+        .products_contain_view
+          = link_to "", class: "link_blue" do
+            全ての商品を見る
+  = render "footer"
+  = render "exhibit"
