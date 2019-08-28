@@ -1,0 +1,12 @@
+.wrapper
+  = render "header"
+  .wrapper__breadcrumb
+    パンくずエリア
+  .identification-content
+    .large-content
+      .logout-box
+        .logout-box__btn
+          =button_to "ログアウト","", class:"btn-default btn-red"
+    =render "sidebar"        
+  = render "footer"
+  = render "exhibit"    
