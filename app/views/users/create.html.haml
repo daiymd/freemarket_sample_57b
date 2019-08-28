@@ -1,0 +1,25 @@
+.wrapper
+  = render "header"
+  .wrapper__breadcrumb
+    パンくずエリア
+  .identification-content
+    .credit__container
+      %h2.chapter__header 支払い方法
+      .credit__container-inner
+        %section
+          %h3.credit__container-inner-content クレジットカード一覧
+        %section.user__card
+          %button.delete 削除する
+          .user__card-info
+            %span.image
+            = image_tag src="/assets/Visa_Inc._logo.svg.png", size: "49x20"
+            %br
+            **** **** **** **** 
+            %br
+            05/24
+        %section
+          = link_to '/', class: "payment__box-content" do
+            %span 支払い方法について
+    =render "sidebar"        
+  = render "footer"
+  = render "exhibit"   
