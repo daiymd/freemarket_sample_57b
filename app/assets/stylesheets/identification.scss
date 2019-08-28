@@ -104,8 +104,8 @@
 }
 
 .btn-red {
-  background: red;
-  border: 1px solid red;
+  background: #EA352D;
+  border: 1px solid#EA352D;
   color: white;
 }
 .form-arbitrary {
@@ -122,4 +122,33 @@
   text-align: right;
   line-height: 1.5;
   color: #0099e8;
+}
+
+// ログアウトボタン
+.logout-box{
+  @include clearfix();
+  width:700px;
+  height:179px;
+  background-color: white;
+  float:right;
+  position: relative;
+
+  &__btn{
+    height:50px;
+    width:320px;
+    color:white;
+    font-size:14px;
+    text-align: center;
+    line-height: 50px;
+    background-color:#EA352D;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
+  .logout-btn{
+    color:white;
+  }
 }
