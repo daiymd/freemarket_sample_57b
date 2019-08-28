@@ -12,13 +12,17 @@ ul {
   list-style: none;
 }
 
+
+// ページ全体
 .wrapper {
   background-color: #f5f5f5;
+  // パンくず用スペース
   &__breadcrumb {
     height: 50px;
     border-top: 1px solid #eee;
     background: white;
   }
+  // マイページのスペース全体
   &__mypage {
     height: 290vh;
     width: 1020px;
@@ -26,6 +30,7 @@ ul {
     @media screen and (min-width: 900px) {
     height: 175vh;
     }
+    // ページの右側
     &__container {
       float: none;
       width: 700px;
@@ -33,6 +38,7 @@ ul {
       @media screen and (min-width: 900px) {
       float: right;
     }
+    // ユーザーイメージ画像エリア
       &__image {
         height: 160px;
         padding: 20px;
@@ -80,6 +86,7 @@ ul {
       }
     
     }
+    // お知らせ等のタブ
     .wrapper__mypage__container__info {
       background-color: white;
       &__tabs {
@@ -118,6 +125,7 @@ ul {
           }
         }
       }
+      // タブ以下のお知らせ内容等のスペース
       &__tab-content {
         &__itemlist {
           display: block;
@@ -205,6 +213,7 @@ ul {
         }
       }
     }
+    // 購入した商品の見だし
       .wrapper__mypage__container__purchased{
         margin: 40px 0;
         background: #fff;
@@ -215,6 +224,7 @@ ul {
           line-height: 36px;
           background: #fafafa;
         }
+        // 取引中、過去の取引のタブ
         &__tabs {
           display: flex;
           background: #eee;
@@ -251,6 +261,7 @@ ul {
             }
           }
         }
+        // タブ下のスペース
         &__transaction {
           display: block;
           position: relative;
@@ -268,6 +279,7 @@ ul {
           }
         }
       }
+      // サイドバー
     .wrapper__mypage__container__l-side {
       width: 700px;
       margin: 0 auto;
