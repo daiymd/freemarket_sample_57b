@@ -1,0 +1,39 @@
+.header
+  .header-inner
+    .header-inner_top
+      .header-inner_top-title
+        = link_to "", class: "link" do
+          %img{src: "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?273499512", width: "134", height: "36"}
+      .header-inner_top-search
+        = form_with url: products_path, class: "search", method: :get, local: true do |f|
+          = f.label :search, class: "search" do
+            = f.text_field :search, class:"search-form", placeholder: "何かお探しですか？"
+            = link_to "", class: "link" do
+              = fa_icon 'search', class: "search-icon"
+    .header-inner_bottom
+      .header-inner_bottom-left
+        .header-inner_bottom-left-category
+          = link_to "", class: "link" do
+            = fa_icon 'list', class: "icon-red"
+            カテゴリーから探す
+        .header-inner_bottom-left-brand
+          = link_to "", class: "link" do
+            = fa_icon 'tags', class: "icon-red"
+            ブランドから探す
+      .header-inner_bottom-right
+        .header-inner_bottom-right-like
+          = link_to "", class: "link" do
+            = fa_icon 'heart', class: "icon-grey"
+            いいね！一覧
+        .header-inner_bottom-right-news
+          = link_to "", class: "link" do
+            = fa_icon 'bell', class: "icon-grey"
+            お知らせ
+        .header-inner_bottom-right-todo
+          = link_to "", class: "link" do
+            = fa_icon 'check', class: "icon-grey"
+            やることリスト
+        .header-inner_bottom-right-mypage
+          = link_to "", class: "link" do
+            = fa_icon 'user', class: "icon-grey"
+            マイページ

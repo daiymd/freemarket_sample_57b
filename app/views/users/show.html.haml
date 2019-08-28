@@ -1,0 +1,159 @@
+.wrapper
+  = render "header"
+  .wrapper__breadcrumb
+    パンくずエリア
+  .wrapper__mypage
+    .wrapper__mypage__container
+      %section.wrapper__mypage__container__image
+        = link_to '' do
+          %figure
+            = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", alt: "画像"
+          %h2.bold karioki
+          .wrapper__mypage__container__image__number
+            %div
+              評価
+              %span.bold
+                = "karioki"
+            %div
+              出品数
+              %span.bold
+                = "karioki"
+      %section.wrapper__mypage__container__info
+        %ul.wrapper__mypage__container__info__tabs
+          %li.active-tab
+            %h3
+              = link_to 'お知らせ', id: "mypage-tab-notification"
+          %li.non-active-tab
+            %h3
+              = link_to 'やることリスト', id: "mypage-tab-todo"
+        .wrapper__mypage__container__info__tab-content
+          %ul.wrapper__mypage__container__info__tab-content__itemlist#mypage-tab-notification
+            %li.wrapper__mypage__container__info__tab-content__itemlist__item
+              = link_to '' do
+                %figure
+                  = image_tag "//static.mercdn.net/images/mercari_profile.png"
+                .wrapper__mypage__container__info__tab-content__itemlist__item__body
+                  .wrapper__mypage__container__info__tab-content__itemlist__item__body__text
+                    ここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキスト
+                  %time
+                    %i.fa.fa-clock-o
+                    = "時間"
+                = fa_icon "angle-right"
+            %li.wrapper__mypage__container__info__tab-content__itemlist__go-mypage
+              = link_to '一覧を見る', id: "mypage-tab-notification"
+      %section.wrapper__mypage__container__purchased
+        %h2.wrapper__mypage__container__purchased__head
+          購入した商品
+        %ul.wrapper__mypage__container__purchased__tabs
+          %li.active-tab
+            %h3
+              = link_to '取引中', id: "mypage-tab-transaction-now"
+          %li.non-active-tab
+            %h3
+              = link_to '過去の取引', id: "mypage-tab-transaction-past"
+        .wrapper__mypage__container__purchased__transaction
+          %figure.wrapper__mypage__container__purchased__transaction__pane
+            = image_tag "https://www.mercari.com/jp/assets/img/common/common/logo-gray-icon.svg?29550023", alt: "画像"
+          %h3.wrapper__mypage__container__purchased__transaction__not-found
+            取引中の商品がありません 
+    .wrapper__mypage__container__l-side
+      %nav
+        %ul.mypage-nav-list
+          %li.mypage-nav-list__item-active
+            = link_to '' , class: "mypage-nav-list__item-active__link" do
+              マイページ
+              = fa_icon "angle-right"
+          %li.mypage-nav-list__item
+            = link_to '' , class: "mypage-nav-list__item__link" do
+              お知らせ
+              = fa_icon "angle-right"
+          %li.mypage-nav-list__item
+            = link_to '' , class: "mypage-nav-list__item__link" do
+              やることリスト
+              = fa_icon "angle-right"
+          %li.mypage-nav-list__item
+            = link_to '' , class: "mypage-nav-list__item__link" do
+              いいね！一覧
+              = fa_icon "angle-right"
+          %li.mypage-nav-list__item
+            = link_to '' , class: "mypage-nav-list__item__link" do
+              出品する
+              = fa_icon "angle-right"
+          %li.mypage-nav-list__item
+            = link_to '' , class: "mypage-nav-list__item__link" do
+              出品した商品-出品中
+              = fa_icon "angle-right"
+          %li.mypage-nav-list__item
+            = link_to '' , class: "mypage-nav-list__item__link" do
+              出品した商品-取引中
+              = fa_icon "angle-right"
+          %li.mypage-nav-list__item
+            = link_to '' , class: "mypage-nav-list__item__link" do
+              出品した商品-売却済み
+              = fa_icon "angle-right"
+          %li.mypage-nav-list__item
+            = link_to '' , class: "mypage-nav-list__item__link" do
+              購入した商品-取引中
+              = fa_icon "angle-right"
+          %li.mypage-nav-list__item
+            = link_to '' , class: "mypage-nav-list__item__link" do
+              購入した商品-過去の取引
+              = fa_icon "angle-right"
+          %li.mypage-nav-list__item
+            = link_to '' , class: "mypage-nav-list__item__link" do
+              ニュース一覧
+              = fa_icon "angle-right"
+          %li.mypage-nav-list__item
+            = link_to '' , class: "mypage-nav-list__item__link" do
+              評価一覧
+              = fa_icon "angle-right"
+          %li.mypage-nav-list__item
+            = link_to '' , class: "mypage-nav-list__item__link" do
+              ガイド
+              = fa_icon "angle-right"
+          %li.mypage-nav-list__item
+            = link_to '' , class: "mypage-nav-list__item__link" do
+              お問い合わせ
+              = fa_icon "angle-right"
+          %h3.mypage-nav-list__double-header
+            メルペイ
+          %li.mypage-nav-list__item
+            = link_to '' , class: "mypage-nav-list__item__link" do
+              売上・振込申請
+              = fa_icon "angle-right"
+          %li.mypage-nav-list__item
+            = link_to '' , class: "mypage-nav-list__item__link" do
+              ポイント
+              = fa_icon "angle-right"
+          %h3.mypage-nav-list__double-header
+            設定
+          %li.mypage-nav-list__item
+            = link_to '' , class: "mypage-nav-list__item__link" do
+              プロフィール
+              = fa_icon "angle-right"
+          %li.mypage-nav-list__item
+            = link_to '' , class: "mypage-nav-list__item__link" do
+              発送元・お届け先住所
+              = fa_icon "angle-right"
+          %li.mypage-nav-list__item
+            = link_to '' , class: "mypage-nav-list__item__link" do
+              支払い方法
+              = fa_icon "angle-right"
+          %li.mypage-nav-list__item
+            = link_to '' , class: "mypage-nav-list__item__link" do
+              メール/パスワード
+              = fa_icon "angle-right"
+          %li.mypage-nav-list__item
+            = link_to '' , class: "mypage-nav-list__item__link" do
+              本人情報
+              = fa_icon "angle-right"
+          %li.mypage-nav-list__item
+            = link_to '' , class: "mypage-nav-list__item__link" do
+              電話番号の確認
+              = fa_icon "angle-right"
+          %li.mypage-nav-list__item
+            = link_to '' , class: "mypage-nav-list__item__link" do
+              ログアウト
+              = fa_icon "angle-right"
+  = render "footer"
+  = render "exhibit"
