@@ -152,3 +152,72 @@
     color:white;
   }
 }
+
+// カード
+
+.credit__container {
+  float: right;
+  width: 700px;
+  background-color: #fff;
+  height: 364.22px;
+
+  .chapter__header {
+    font-weight: 600;
+    padding: 8px 24px;
+    font-size: 24px;
+    border-bottom: 1px solid #f5f5f5;
+    text-align: center;
+  }
+
+    &-inner {
+      padding: 64px;
+      border-top: 1px solid #f5f5f5;
+      &-content {
+        font-size: 16px;
+        text-align: left;
+        font-weight: bold;
+        max-width: 320px;
+        margin: 0 auto;
+      }
+    }
+}
+
+section.user__card {
+  padding: 24px 0;
+  border-bottom: 1px solid #eee; 
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.payment__box-content {
+  display: block;
+  color: #0099e8;
+  font-size: 14px;
+  text-align: right;
+  text-decoration: none;
+  margin: 40px 0 0;
+}
+
+
+.user__card-btn {
+  line-height: 20px;
+  display: block;
+  margin: 0 auto;
+  padding-top: 10px;
+  font-size: 16px;
+  max-width: 320px;
+  text-align: left;
+}
+
+
+
+button.delete {
+  float: right;
+  position: relative;
+  padding: 4px 6px;
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid #ea352d;
+  color: #ea352d;
+  cursor: pointer;
+}
