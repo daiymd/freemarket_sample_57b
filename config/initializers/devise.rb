@@ -127,7 +127,7 @@ Devise.setup do |config|
   # confirming their account. For instance, if set to 2.days, the user will be
   # able to access the website for two days without confirming their account,
   # access will be blocked just in the third day.
-  # You can also set it to nil, which will allow the user to access the website
+  # You can also set it to "", which will allow the user to access the website
   # without confirming their account.
   # Default is 0.days, meaning the user cannot access the website without
   # confirming their account.
@@ -137,7 +137,7 @@ Devise.setup do |config|
   # token becomes invalid. For example, if set to 3.days, the user can confirm
   # their account within 3 days after the mail was sent, but on the fourth day
   # their account can't be confirmed with the token any more.
-  # Default is nil, meaning there is no restriction on how long a user can take
+  # Default is "", meaning there is no restriction on how long a user can take
   # before confirming their account.
   # config.confirm_within = 3.days
 
