@@ -1,0 +1,117 @@
+_* {
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  touch-action: manipulation;
+  color: black;
+}
+ul {
+  list-style: none;
+}
+textarea {
+  min-height: 216px;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.btn-default {
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  -webkit-transition: all ease-out 0.3s;
+  transition: all ease-out 0.3s;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-red {
+  background: #EA352D;
+  border: 1px solid#EA352D;
+  color: white;
+}
+
+// ページ全体
+.wrapper {
+  background-color: #f5f5f5;
+  // パンくず用スペース
+  &__breadcrumb {
+    height: 50px;
+    border-top: 1px solid #eee;
+    background: white;
+  }
+  &__profile {
+    height: 290vh;
+    margin: 24px auto 0;
+    @media screen and (min-width: 900px) {
+    height: 175vh;
+    width: 1020px;
+    }
+    &__container {
+      width: 700px;
+      margin: 0 auto 40px;
+      @media screen and (min-width: 900px) {
+      float: right;
+      }
+      &__contents {
+        background: white;
+        &__header {
+          text-align: center;
+          font-weight: bold;
+          font-size: 24px;
+          padding: 8px 24px;
+        }
+        &__content {
+          // margin: 40px 0;
+          &__image-area {
+            height: 160px;
+            padding: 72px 16px 24px;
+            text-align: center;
+            background: url(https://www.mercari.com/jp/assets/img/mypage/user-bg.jpg?57038983);
+            position: relative;
+            figure {
+              border-radius: 50%;
+              overflow: hidden;
+              width: 60px;
+              height: 60px;
+              display: inline-block;
+              img {
+                vertical-align: middle;
+                max-width: 60px;
+                max-height: 60px;
+              }
+            }
+            .name-edit {
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              height: 48px;
+              width: 220px;
+              padding: 10px 16px 8px;
+              margin: 0 0 0 8px;
+              vertical-align: 80%;
+              background: white;
+              font-size: 16px;
+              line-height: 1.5;
+            }
+          
+        }
+        .wrapper__profile__container__contents__content__profile-text {
+          padding: 40px 16px;
+          & button {
+            margin: 16px 0 0;
+          }
+        }
+      }
+    }
+    } 
+  }
+}

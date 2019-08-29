@@ -1,0 +1,26 @@
+.wrapper
+  = render "header"
+  .wrapper__breadcrumb
+    パンくずエリア
+  .wrapper__profile
+    .wrapper__profile__container
+      .wrapper__profile__container__contents
+        %h2.wrapper__profile__container__contents__header
+          プロフィール
+        %form.wrapper__profile__container__contents__content
+          .wrapper__profile__container__contents__content__image-area
+            %figure
+              = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", alt: "画像"
+            = text_field_tag "zip-name", "", class: "name-edit", placeholder: "例:)AYA☆セール中"
+          .wrapper__profile__container__contents__content__profile-text
+            %textarea.text-area{placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
+            %button{class:"btn-default btn-red", type: "submit"}
+              変更する
+
+          
+    = render "sidebar"
+  = render "footer"
+  = render "exhibit"
+
+
+
