@@ -24,12 +24,12 @@ ul {
   }
   // マイページのスペース全体
   &__mypage {
-    height: 290vh;
+    @include clearfix();
     width: 1020px;
-    margin: 40px auto 0;
-    @media screen and (min-width: 900px) {
-    height: 175vh;
-    }
+    margin: 40px auto;
+    // @media screen and (min-width: 900px) {
+    // height: 175vh;
+    // }
     // ページの右側
     &__container {
       float: none;
