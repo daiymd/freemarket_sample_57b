@@ -11,5 +11,14 @@ class User < ApplicationRecord
   # has_many :buyers
   # has_many :sellers
   # has_one :payment
-  # has_many :evaluations       
+  # has_many :evaluations
+
+  with_options presence: true do
+    validates :name
+    validates :nickname
+    validates :furigana
+    validates :password_confirmation
+    validates :birthday
+    validates :tell
+  end
 end
