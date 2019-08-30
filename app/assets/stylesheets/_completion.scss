@@ -9,9 +9,9 @@ body {
   min-height: 100%;
 }
 
-.footer-top_content {
-  @include clearfix ();
-}
+// .footer-top_content {
+//   // @include clearfix ();
+// }
 
 .btn-default {
   display: block;
@@ -29,6 +29,10 @@ body {
   background: #EA352D;
   border: 1px solid#EA352D;
   color: white;
+}
+
+button {
+  margin: 20px;
 }
 
 .container {
