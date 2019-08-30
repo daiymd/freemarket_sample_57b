@@ -1,0 +1,20 @@
+.container
+  .container__width-box
+    .container__width-box__header
+      .container__width-box__header__tell
+        電話番号の確認
+    %form.container__width-box__form
+      .container__width-box__form__content
+        .container__width-box__form__content__tell-box
+          %h2.container__width-box__form__content____tell-box__header
+            携帯電話の番号
+          %input{class:"tell-numbers-input", type:"text", placeholder:"携帯電話の番号を入力"}
+          .container__width-box__form__content__tell-box__message
+            本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+      .container__width-box__form__btn-box
+        %button{class:"btn-default", type:"submit"}
+          SMSを送信する
+      .container__width-box__form__sms-message
+        *電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+      .container__width-box__footer
+        =link_to "電話番号の確認が必要な理由>" ,id: "confirmation-reason"
