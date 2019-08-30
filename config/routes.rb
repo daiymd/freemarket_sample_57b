@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       get :profile
       get :pay
       get :member
-      get :adress
+      get :address
       get :tell
     end
   end
