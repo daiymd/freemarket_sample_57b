@@ -20,7 +20,7 @@ body {
   background-color: #EA352D;
 }
 
-.container {
+.completion-container {
   margin: 0 auto;
   width: 700px;
   background: white;
@@ -28,7 +28,7 @@ body {
   &__header {
     display: inline-block;
     margin: 20px 0;
-    &__completion {
+    &__text {
       font-weight: bold;
     }
   }
