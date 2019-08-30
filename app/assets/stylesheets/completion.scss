@@ -7,32 +7,17 @@ _* {
 
 body {
   min-height: 100%;
+  background:#f5f5f5;
 }
-
-// .footer-top_content {
-//   // @include clearfix ();
-// }
 
 .btn-default {
-  display: block;
-  width: 100%;
-  line-height: 48px;
-  font-size: 14px;
-  border: 1px solid transparent;
-  -webkit-transition: all ease-out 0.3s;
-  transition: all ease-out 0.3s;
-  cursor: pointer;
-  text-align: center;
-}
-
-.btn-red {
-  background: #EA352D;
-  border: 1px solid#EA352D;
+  height: 50px;
+  width: 320px;
   color: white;
-}
-
-button {
-  margin: 20px;
+  font-size: 14px;
+  text-align: center;
+  line-height: 50px;
+  background-color: #EA352D;
 }
 
 .container {
@@ -41,6 +26,7 @@ button {
   background: white;
   text-align: center;
   &__header {
+    display: inline-block;
     margin: 20px 0;
     &__completion {
       font-weight: bold;
@@ -51,6 +37,9 @@ button {
     &__text {
       margin: 20px auto;
     }
+  }
+  &__btn {
+    margin: 20px;
   }
   &__banner {
     @include footer-top();
