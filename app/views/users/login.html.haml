@@ -1,0 +1,27 @@
+.sign-up_container
+  .sign-up_header
+    %h1
+      = link_to "" do
+        %img{src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2531475304"}
+  .login-page
+    .login-page_content
+      .login-page_content-no-account
+        %p アカウントをお持ちでない方はこちら
+        = link_to "", class:"login" do
+          新規会員登録
+      .login-page_content-link
+        = link_to "", class: "facebook-link" do
+          = fa_icon "smile", class: "aaa"
+          Facebookでログイン
+        = link_to "", class: "google-link" do
+          %img{src: "https://www.mercari.com/jp/assets/img/common/common/google.svg"}
+          Googleでログイン
+      = form_with url: "/users/login", method: :get, local: true do |f|
+        .login-page_content-form
+          .login-page_content-form-group
+            = f.text_field :email, class: "form", placeholder: "メールアドレス"
+          .login-page_content-form-group
+            = f.text_field :password, class: "form", placeholder: "パスワード"
+          = f.submit "次へ進む", class: "submit-btn"
+          = link_to "", class: "pass" do
+            パスワードをお忘れの方
