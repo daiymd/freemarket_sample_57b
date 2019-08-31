@@ -5,18 +5,19 @@
       .tell-container__width-box__header__tell
         電話番号の確認
     %form.tell-container__width-box__form
-      .tell-container__width-box__form__content
-        .tell-container__width-box__form__content__tell-box
-          %h2.tell-container__width-box__form__content____tell-box__header
-            携帯電話の番号
-          %input{class:"tell-numbers-input", type:"text", placeholder:"携帯電話の番号を入力"}
-          .tell-container__width-box__form__content__tell-box__message
-            本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
-      .tell-container__width-box__form__btn-box
-        %button{class:"sms-send-btn", type:"submit"}
-          SMSを送信する
-      .tell-container__width-box__form__sms-message
-        *電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
-      .tell-container__width-box__footer
-        =link_to "電話番号の確認が必要な理由>" ,id: "confirmation-reason"
+      .tell-container__width-box__form__box
+        .tell-container__width-box__form__box__content
+          .tell-container__width-box__form__box__content__tell-box
+            %h2.tell-container__width-box__form__box__content____tell-box__header
+              携帯電話の番号
+            %input{class:"tell-numbers-input", type:"text", placeholder:"携帯電話の番号を入力"}
+            .tell-container__width-box__form__box__content__tell-box__message
+              本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+        .tell-container__width-box__form__box__btn-box
+          %button{class:"sms-send-btn", type:"submit"}
+            SMSを送信する
+        .tell-container__width-box__form__box__sms-message
+          *電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+        .tell-container__width-box__footer
+          =link_to "電話番号の確認が必要な理由>" ,id: "confirmation-reason"
 = render "shared/logofooter"
