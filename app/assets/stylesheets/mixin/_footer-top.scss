@@ -1,0 +1,47 @@
+@mixin footer-top() {
+  .footer-top {
+    height: 250px;
+    background-image: url('https://www.mercari.com/jp/assets/img/common/jp/top/download_bg_pc.jpg?71240750');
+    background-position: center;
+    background-size: cover;
+    &_content {
+      position: relative;
+      display: flex;
+      height: 250px;
+      width: 700px;
+      margin: 0 auto;
+      &-inner {
+        max-width: 420px;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        color: white;
+        &-text {
+          font-size: 24px;
+          font-weight: bold;
+        }
+        &-text2 {
+          font-size: 35px;
+        }
+        &-icon {
+          display: flex;
+          margin-top: 20px;
+          &-app {
+            margin-left: 20px;
+            margin-top: 15px;
+            display: flex;
+            .icon-phone {
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+    }
+    .phone {
+      margin: 0;
+      position: absolute;
+      top:0;
+      right: 0;
+    }
+  }
+}
