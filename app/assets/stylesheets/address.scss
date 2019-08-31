@@ -15,7 +15,7 @@ label {
   font-weight: 600;
 }
 
-.btn-default {
+.address-btn {
   height: 50px;
   width: 320px;
   color: white;
@@ -51,6 +51,7 @@ label {
 .address-container {
   @include clearfix();
   margin: 0 auto;
+  padding: 0 0 40px 0;
   width: 700px;
   background: white;
   text-align: center;
