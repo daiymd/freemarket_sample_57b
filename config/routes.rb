@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       get :tell
       get :completion
       get :login
+      get :signup
     end
   end
   resources :products

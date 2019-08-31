@@ -1,0 +1,16 @@
+.registration__container
+  = render "shared/logoheader"
+  .registration__container__body
+    %h2.registration__header 新規会員登録
+    .registration__container__inner
+      .l-single-content
+        %a.mail-btn-red
+          %i.fa.fa-envelope#icon
+          %span.mail-text メールアドレスで登録する
+        %a.facebook-btn-blue
+          %i.fa.fa-facebook-square#icon
+          %span.facebook-text Facebookで登録する
+        %a.google-btn-white
+          %img{src: "https://yt3.ggpht.com/a/AGF-l78IIyXSWPuwMCI53MwhjOPlUrrFOx5laYc0ZA=s900-c-k-c0xffffffff-no-rj-mo",width: "25", height: "25",class:"googlelogo"}
+          %span.google-text Googleで登録する
+  = render "shared/logofooter"
