@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root "users#create"
+  root "users#show"
   resources :users do
     collection do
       get :card
@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       get :member
       get :address
       get :tell
+      get :completion
       get :login
       get :signup
     end
