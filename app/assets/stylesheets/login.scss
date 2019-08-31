@@ -1,0 +1,83 @@
+.login-page_content {
+  width: 456px;
+  margin: 0 auto;
+  background-color: #fff;
+  &-no-account {
+    padding: 40px 64px;
+    text-align: center;
+    a {
+      display: block;
+      margin: 8px 0 0;
+      border: 1px solid #0099e8;
+      background: #0099e8;
+      color: #fff;
+      line-height: 40px;
+    }
+
+  }
+  &-link {
+    padding: 32px 64px;
+    border-top: 1px solid #eee;
+    .facebook-link {
+      background: #385185;
+      color: #fff;
+      display: block;
+      width: 100%;
+      line-height: 48px;
+      font-size: 14px;
+      border: 1px solid transparent;
+      transition: all ease-out .3s;
+      cursor: pointer;
+      text-align: center;
+    }
+    .google-link {
+      position: relative;
+      margin: 16px 0 0;
+      border: #979797 solid 1px;
+      color: #333;
+      display: block;
+      width: 100%;
+      line-height: 48px;
+      font-size: 14px;
+      transition: all ease-out .3s;
+      cursor: pointer;
+      text-align: center;
+    }
+  }
+  &-form {
+    padding: 24px 63px 32px;
+    &-group {
+      margin-bottom: 32px;
+      .form {
+        width: 100%;
+        height: 48px;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        line-height: 1.5;
+        font-size: 16px;
+      }
+    }
+    .submit-btn {
+      margin: 50px 0 32px 0;
+      background: #ea352d;
+      border: 1px solid #ea352d;
+      color: #fff;
+      display: block;
+      width: 100%;
+      line-height: 48px;
+      font-size: 14px;
+      text-align: center;
+    }
+    .pass {
+      margin-top: 40px;
+      text-decoration: none;
+      color: #0099e8;
+    }
+  }
+}
+.aaa {
+  font-family: 'Font Awesome 5 Brands';
+  
+}
