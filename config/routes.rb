@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       get :member
       get :address
       get :tell
+      get :login
     end
   end
   resources :products
