@@ -75,6 +75,7 @@ gem 'carrierwave'
 gem 'fog-aws'
 gem 'mini_magick'
 gem 'kaminari'
+gem 'active_hash'
 
 group :production do
   gem 'unicorn', '5.4.1'
