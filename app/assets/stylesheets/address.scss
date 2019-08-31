@@ -15,6 +15,7 @@ label {
   font-weight: 600;
 }
 
+
 .start-btn {
   height: 50px;
   width: 320px;
@@ -23,6 +24,7 @@ label {
   text-align: center;
   line-height: 50px;
   background-color: #EA352D;
+  border: none;
 }
 
 .select-wrap{
@@ -51,6 +53,7 @@ label {
 .address-container {
   @include clearfix();
   margin: 0 auto;
+  padding: 0 0 40px 0;
   width: 700px;
   background: white;
   text-align: center;
