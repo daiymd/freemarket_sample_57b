@@ -1,0 +1,58 @@
+.login-page_content {
+  width: 456px;
+  margin: 0 auto;
+  background-color: #fff;
+  &-no-account {
+    border-bottom: solid 1px #eee;
+    padding: 40px 64px;
+    text-align: center;
+    a {
+      display: block;
+      margin: 8px 0 0;
+      border: 1px solid #0099e8;
+      background: #0099e8;
+      color: #fff;
+      line-height: 40px;
+    }
+
+  }
+  &-btn {
+    margin: 30px 64px 40px;
+  }
+  &-form {
+    padding: 24px 63px 32px;
+    &-group {
+      margin-bottom: 32px;
+      .form {
+        width: 100%;
+        height: 48px;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        line-height: 1.5;
+        font-size: 16px;
+      }
+    }
+    .submit-btn {
+      margin: 50px 0 32px 0;
+      background: #ea352d;
+      border: 1px solid #ea352d;
+      color: #fff;
+      display: block;
+      width: 100%;
+      line-height: 48px;
+      font-size: 14px;
+      text-align: center;
+    }
+    .pass {
+      margin-top: 40px;
+      text-decoration: none;
+      color: #0099e8;
+    }
+  }
+}
+.aaa {
+  font-family: 'Font Awesome 5 Brands';
+  
+}

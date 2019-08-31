@@ -74,6 +74,7 @@ gem 'carrierwave'
 gem 'fog-aws'
 gem 'mini_magick'
 gem 'kaminari'
+gem 'active_hash'
 gem 'font-awesome-sass', '~> 5.4.1'
 
 group :production do

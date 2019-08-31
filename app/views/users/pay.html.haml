@@ -1,0 +1,41 @@
+.sign-up_container
+  = render "shared/logoheader"
+  .sign-up_main
+    .sign-up_main-container
+      .sign-up_main-container-head
+        支払い方法
+      .sign-up_main-container_registration
+        = form_with url: "/users/member", method: :get, local: true do |f|
+          .sign-up_main-container_registration-content
+            .sign-up_main-container_registration-content-form
+              = f.label :nickname do
+                カード番号
+              %span{class: "form-require"}必須
+              = f.text_field :nickname, class: "input-default", placeholder: "半角数字のみ"
+              %img{src: "https://www.sbpayment.jp/images/service/card.png", width: "300", height: "45"}
+            .sign-up_main-container_registration-content-form
+              = f.label :nickname do
+                有効期限
+              %span{class: "form-require"}必須
+              .birthday-select
+                .birthday-select-wrap{class: "birthday-select-wrap_month"}
+                  = fa_icon "angle-down 2x", class: "icon"
+                  = f.select :birthday, ["--", "1", "2", "3", "4", "5", "6", "7"], { class: "select" }
+                %span 月
+                .birthday-select-wrap{class: "birthday-select-wrap_day"}
+                  = fa_icon "angle-down 2x", class: "icon"
+                  = f.select :birthday, ["--", "1", "2", "3", "4", "5", "6", "7"], { class: "select" }
+                %span 日
+            .sign-up_main-container_registration-content-form{class: "bottom"}
+              = f.label :nickname do
+                セキュリティーコード
+              %span{class: "form-require"}必須
+              = f.text_field :nickname, class: "input-default", placeholder: "カード背面4桁もしくは3桁の番号"
+            .sign-up_main-container_registration-content-form
+              %p
+                = link_to "", class: "form-text-blue" do
+                  = fa_icon "question-circle"
+                  カード裏面の番号とは？
+            .sign-up_main-container_registration-content-form
+              = f.submit "次へ進む", class: "submit-btn"
+  = render "shared/logofooter"

@@ -1,0 +1,25 @@
+.sign-up_container
+  = render "shared/logoheader"
+  .login-page
+    .login-page_content
+      .login-page_content-no-account
+        %p アカウントをお持ちでない方はこちら
+        = link_to "", class:"login" do
+          新規会員登録
+      .login-page_content-btn
+        %a.facebook-btn-blue
+          %i.fa.fa-facebook-square#icon
+          %span.facebook-text Facebookで登録する
+        %a.google-btn-white
+          %img{src: "https://yt3.ggpht.com/a/AGF-l78IIyXSWPuwMCI53MwhjOPlUrrFOx5laYc0ZA=s900-c-k-c0xffffffff-no-rj-mo",width: "25", height: "25",class:"googlelogo"}
+          %span.google-text Googleで登録する
+      = form_with url: "/users/login", method: :get, local: true do |f|
+        .login-page_content-form
+          .login-page_content-form-group
+            = f.text_field :email, class: "form", placeholder: "メールアドレス"
+          .login-page_content-form-group
+            = f.text_field :password, class: "form", placeholder: "パスワード"
+          = f.submit "次へ進む", class: "submit-btn"
+          = link_to "", class: "pass" do
+            パスワードをお忘れの方
+  = render "shared/logofooter"
