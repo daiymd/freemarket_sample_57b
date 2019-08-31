@@ -1,0 +1,139 @@
+%header
+= render "header"
+
+.item
+  .item__show
+    .item__show_name その辺で拾った石
+    .item__show_main
+      .item__show_main-photo
+        = image_tag "https://pbs.twimg.com/profile_images/3739834369/6fe32912d31e1c7f806268247ae313ff_400x400.jpeg", size: "280x280"
+      %table.item__show_main-table
+        %tbody
+          %tr
+            %th 出品者
+            %td
+              = link_to "" do
+                ⭐️
+              .ratebox
+                .ratings
+                  = icon "fas",'smile',class: "smile"
+                  %span (^^)
+                .ratings
+                  = icon "fas", 'meh',class: "meh"
+                  %span (;;)
+                .ratings
+                  = icon 'fas', "angry", class: "angry"
+                  %span ('ω')
+          %tr
+            %th カテゴリー
+            %td.category
+              = link_to "" do
+                %div 石
+              = link_to "" do
+                %div > その辺に落ちてる
+              = link_to "" do
+                %div > 石  
+          %tr
+            %th ブランド
+            %td 
+          %tr
+            %th 商品の状態
+            %td 新品、未使用
+          %tr
+            %th 配送料の負担
+            %td 送料込み(出品者負担)
+          %tr
+            %th 配送の方法
+            %td 未定
+          %tr
+            %th 配送元地域
+            %td
+              = link_to "" do
+                川
+          %tr
+            %th 発送日の目安
+            %td 1~2年で発送
+    .item__show_price
+      %span.price ¥10
+      %span.tax (税込)
+      %span.fee 送料込み
+    .item__show_btn
+      = link_to "" do
+        購入画面に進む
+    .item__show_text
+      %p.text
+        即買いok  (o^^o)
+        川で拾ったお👱‍ε=ε=ε=ε=ε=ε=┌(;￣◇￣)┘
+        ＼＼\\٩( 'ω' )و //／／
+    .item__show_rate
+      .left
+        %button.left_button
+          = icon "fa-heart", class: "like"
+          %span いいね！
+          %span.amount 0
+        .report_button
+          = link_to "" do
+            = icon "fa-flag", class: "flag"
+            %span 不適切な商品の報告
+      .right
+        = link_to "" do
+          = icon "fa-lock", class: "lock"
+          %span あんしん・あんぜんへの取り組み
+  .item__comments
+    .content
+      %form
+        %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        = text_area_tag "text"
+        %button
+          %span コメントする
+  %ul.next
+    %li.link-preview
+      = link_to "" do
+        = icon "fa-arrow-left", class: "left"
+        路傍の石
+    %li.link-next
+      = link_to "" do
+        = icon "fa-arrow-right", class: "right"
+        岩
+  .item__media
+    .content
+    %ul.media_box
+      %li
+        = link_to "" do
+          = icon "fab", "facebook", class: "facebook"
+      %li
+        = link_to "" do
+          = icon "fab", "twitter", class: "twitter"
+      %li
+        = link_to "" do
+          = icon "fab", "line", class: "line"
+      %li
+        = link_to "" do
+          = icon "fab", "pinterest", class: "pinterest"
+  .item__user
+    %section
+      .box-head
+        = link_to "" do
+          💫さんのその他の出品
+      .items-box
+        = render "products"
+        = render "products"
+        = render "products"
+    %section
+      .box-head
+        = link_to "" do
+          石（石）その他の商品
+      .items-box
+        = render "products"
+        = render "products"
+        = render "products"    
+  %nav.bottom
+    %ul
+      %li
+        = link_to "" do
+          %span メルカリ
+        = icon "fas", "arrow-right",class: "arrow-right"  
+      %li 
+        %span その辺で拾った石
+%banner
+= render "footer"
