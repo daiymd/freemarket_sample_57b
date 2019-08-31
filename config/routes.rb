@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       get :address
       get :tell
       get :login
+      get :signup
     end
   end
   resources :products

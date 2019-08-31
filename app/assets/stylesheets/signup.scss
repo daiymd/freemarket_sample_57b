@@ -1,0 +1,89 @@
+.registration__container {
+  display: block;
+    &__body{
+      width: 700px;
+      margin: 0 auto;
+      background-color: #fff;
+    }
+  .registration__header {
+    font-weight: 600;
+    padding: 32px;
+    font-size: 22px;
+    border-bottom: 1px solid #f5f5f5;
+    text-align: center;
+  }
+    &__inner {
+      padding: 40px 40px 64px;
+    }
+.l-single-content {
+        font-size: 16px;
+        max-width: 343px;
+        margin: 0 auto;
+      }
+    }
+.mail-btn-red{
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  -webkit-transition: all ease-out .3s;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;;
+  color: #fff;
+  background-color: #ea352d;
+  #icon{
+    font-size: 22px
+  }
+}
+.facebook-btn-blue{
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  -webkit-transition: all ease-out .3s;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;;
+  color: #fff;
+  background-color: #385185;
+  margin: 16px 0 0;
+  #icon{
+    font-size: 22px
+  }
+}
+.google-btn-white{
+  border-radius: 4px;
+  display: block;
+  border: #979797 solid 1px;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  border: #979797 solid 1px;
+  -webkit-transition: all ease-out .3s;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;;
+  color: black;
+  background-color: #fff;
+  margin: 16px 0 0;
+}
+.fa-facebook-square{
+  float:left;
+  margin-top: 12px;
+  margin-left: 10px;
+}
+.fa-envelope{
+  float:left;
+  margin-top: 12px;
+  margin-left: 10px;
+}
+.googlelogo{
+  float:left;
+  margin-top: 12px;
+  margin-left: 6px;
+}

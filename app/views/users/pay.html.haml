@@ -1,8 +1,5 @@
 .sign-up_container
-  .sign-up_header
-    %h1
-      = link_to "" do
-        %img{src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2531475304"}
+  = render "shared/logoheader"
   .sign-up_main
     .sign-up_main-container
       .sign-up_main-container-head
@@ -41,3 +38,4 @@
                   カード裏面の番号とは？
             .sign-up_main-container_registration-content-form
               = f.submit "次へ進む", class: "submit-btn"
+  = render "shared/logofooter"

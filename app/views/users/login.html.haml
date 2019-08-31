@@ -1,21 +1,18 @@
 .sign-up_container
-  .sign-up_header
-    %h1
-      = link_to "" do
-        %img{src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2531475304"}
+  = render "shared/logoheader"
   .login-page
     .login-page_content
       .login-page_content-no-account
         %p アカウントをお持ちでない方はこちら
         = link_to "", class:"login" do
           新規会員登録
-      .login-page_content-link
-        = link_to "", class: "facebook-link" do
-          = fa_icon "smile", class: "aaa"
-          Facebookでログイン
-        = link_to "", class: "google-link" do
-          %img{src: "https://www.mercari.com/jp/assets/img/common/common/google.svg"}
-          Googleでログイン
+      .login-page_content-btn
+        %a.facebook-btn-blue
+          %i.fa.fa-facebook-square#icon
+          %span.facebook-text Facebookで登録する
+        %a.google-btn-white
+          %img{src: "https://yt3.ggpht.com/a/AGF-l78IIyXSWPuwMCI53MwhjOPlUrrFOx5laYc0ZA=s900-c-k-c0xffffffff-no-rj-mo",width: "25", height: "25",class:"googlelogo"}
+          %span.google-text Googleで登録する
       = form_with url: "/users/login", method: :get, local: true do |f|
         .login-page_content-form
           .login-page_content-form-group
@@ -25,3 +22,4 @@
           = f.submit "次へ進む", class: "submit-btn"
           = link_to "", class: "pass" do
             パスワードをお忘れの方
+  = render "shared/logofooter"
