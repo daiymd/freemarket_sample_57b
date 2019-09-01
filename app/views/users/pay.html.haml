@@ -19,11 +19,11 @@
               %span{class: "form-require"}必須
               .birthday-select
                 .birthday-select-wrap{class: "birthday-select-wrap_month"}
-                  = fa_icon "angle-down 2x", class: "icon"
+                  = icon "fas", "angle-down 2x", class: "icon"
                   = f.select :birthday, ["--", "1", "2", "3", "4", "5", "6", "7"], { class: "select" }
                 %span 月
                 .birthday-select-wrap{class: "birthday-select-wrap_day"}
-                  = fa_icon "angle-down 2x", class: "icon"
+                  = icon "fas", "angle-down 2x", class: "icon"
                   = f.select :birthday, ["--", "1", "2", "3", "4", "5", "6", "7"], { class: "select" }
                 %span 日
             .sign-up_main-container_registration-content-form{class: "bottom"}
@@ -34,7 +34,7 @@
             .sign-up_main-container_registration-content-form
               %p
                 = link_to "", class: "form-text-blue" do
-                  = fa_icon "question-circle"
+                  = icon "fas", "question-circle"
                   カード裏面の番号とは？
             .sign-up_main-container_registration-content-form
               = f.submit "次へ進む", class: "submit-btn"

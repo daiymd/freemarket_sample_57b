@@ -50,15 +50,15 @@
               %span{class: "form-require"}必須
               .birthday-select
                 .birthday-select-wrap
-                  = fa_icon "angle-down 2x", class: "icon"
+                  = icon "fas", "angle-down 2x", class: "icon"
                   = f.select :birthday, ["--", "2019", "2018", "2017", "2016", "2015"], { class: "select" }
                 %span 年
                 .birthday-select-wrap{class: "birthday-select-wrap_month"}
-                  = fa_icon "angle-down 2x", class: "icon"
+                  = icon "fas", "angle-down 2x", class: "icon"
                   = f.select :birthday, ["--", "1", "2", "3", "4", "5", "6", "7"], { class: "select" }
                 %span 月
                 .birthday-select-wrap{class: "birthday-select-wrap_day"}
-                  = fa_icon "angle-down 2x", class: "icon"
+                  = icon "fas", "angle-down 2x", class: "icon"
                   = f.select :birthday, ["--", "1", "2", "3", "4", "5", "6", "7"], { class: "select" }
                 %span 日
             .sign-up_main-container_registration-content-form-text
@@ -75,5 +75,5 @@
               %p
                 = link_to "", class: "form-text-blue" do
                   本人情報の登録について
-                  = fa_icon "arrow-right"
+                  = icon "fas", "arrow-right"
   = render "shared/logofooter"
