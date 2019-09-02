@@ -70,7 +70,7 @@
       %h3.mypage-nav-list__double-header
         設定
       %li.mypage-nav-list__item
-        = link_to '' , class: "mypage-nav-list__item__link" do
+        = link_to 'identification' ,{controller: "users", action: "edit", name: "identification", class: "mypage-nav-list__item__link"} do
           プロフィール
           = icon "fas", "angle-right"
       %li.mypage-nav-list__item

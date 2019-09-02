@@ -27,6 +27,7 @@ Things you may want to cover:
 |buyer_id|integer||
 |seller_id|integer||
 
+
 ### Association
 - has_many :products, through: :transactions
 - has_many :transactions
@@ -37,6 +38,7 @@ Things you may want to cover:
 - has_many :sellers
 - has_one :payment
 - has_many :evaluations
+- has_many :sns_credentials
 
 ## productsテーブル
 |Column|Type|Options|
@@ -53,7 +55,7 @@ Things you may want to cover:
 - has_one :transactions
 - has_many :comments
 - has_many :likes
-- has_one :street_adress
+- has_one :street_address
 - has_many :images
 
 
@@ -96,7 +98,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 
-## street_adressesテーブル
+## street_addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|foreign_key: true|
@@ -104,20 +106,21 @@ Things you may want to cover:
 |city|string|null: false|
 |postal_code|integer|null: false|
 |building_name|string||
-|adress|string|null: false|
+|address|string|null: false|
 
 ### Association
 - belongs_to :user
 
-## sns_credential
+## sns_credentials
 |Column|Type|Options|
 |------|----|-------|
 |uid|string|null: false|
 |provider|string|null: false|
 
 ### Association
+- belongs_to :user
 
-## paymentテーブル
+## paymentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|foreign_key: true|
@@ -138,6 +141,14 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :product
 
+### categorysテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string||
+|ancestry|string||
+
+### Association
+- has_ancestry
 
 * Database initialization
 
