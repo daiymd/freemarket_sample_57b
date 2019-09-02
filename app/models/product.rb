@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  belongs_to :user, through: :transaction
+  # belongs_to :user, through: :transaction
   has_one :transaction
   has_many :comments
   has_many :likes
