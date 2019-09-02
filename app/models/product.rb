@@ -1,9 +1,9 @@
 class Product < ApplicationRecord
-  # belongs_to :user, through: :transactions
-  # has_one :transactions
-  # has_many :comments
-  # has_many :likes
-  # has_one :street_adress
-  # has_many :images
+  belongs_to :user, through: :transaction
+  has_one :transaction
+  has_many :comments
+  has_many :likes
+  has_one :street_address
+  has_many :images
   mount_uploader :image, ImageUploader
 end
