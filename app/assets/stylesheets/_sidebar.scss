@@ -59,4 +59,30 @@
       
     }
     
-
+.wrapper__breadcrumb{
+  .breadcrumbs-list{
+    padding: 16px;
+    @media screen and (min-width: 768px){
+      width: 700px;
+      margin: 0 auto;
+      padding: 16px 0;
+    }
+    @media screen and (min-width: 1068px){
+      width: 1020px;
+    }
+    a{
+      text-decoration: none;
+      color: #333;
+      
+    }
+    i{
+      margin: 0 8px;
+      font-size: 9px;
+      color: #888;
+    }
+    span{
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+}

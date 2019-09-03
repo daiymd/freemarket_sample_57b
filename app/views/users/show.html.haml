@@ -1,7 +1,8 @@
 .wrapper
   = render "header"
   .wrapper__breadcrumb
-    パンくずエリア
+    - breadcrumb :mypage
+    = breadcrumbs pretext: "",separator: " &rsaquo; ", class: "breadcrumbs-list"
   .wrapper__mypage
     .wrapper__mypage__container
       %section.wrapper__mypage__container__image
