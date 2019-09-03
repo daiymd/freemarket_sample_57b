@@ -1,7 +1,8 @@
 .wrapper
   = render "header"
   .wrapper__breadcrumb
-    パンくずエリア
+    - breadcrumb :card
+    = breadcrumbs pretext: "",separator: " &rsaquo; ", class: "breadcrumbs-list"
   .identification-content
     .credit__container
       %h2.chapter__header 支払い方法

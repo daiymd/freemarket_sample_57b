@@ -1,7 +1,8 @@
 .wrapper
   = render "header"
   .wrapper__breadcrumb
-    パンくずエリア
+    - breadcrumb :identification
+    = breadcrumbs pretext: "",separator: " &rsaquo; ", class: "breadcrumbs-list"
   .identification-content
     .identification-chapter-container
       .identification-chapter-head 本人情報の登録
