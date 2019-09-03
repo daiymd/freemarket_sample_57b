@@ -1,7 +1,8 @@
 .wrapper
   = render "header"
   .wrapper__breadcrumb
-    パンくずエリア
+    - breadcrumb :logout
+    = breadcrumbs pretext: "",separator: " &rsaquo; ", class: "breadcrumbs-list"
   .identification-content
     .large-content
       .logout-box

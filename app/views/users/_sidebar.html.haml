@@ -2,7 +2,7 @@
   %nav
     %ul.mypage-nav-list
       %li.mypage-nav-list__item-active
-        = link_to '' , class: "mypage-nav-list__item-active__link" do
+        = link_to '/users/show' , class: "mypage-nav-list__item-active__link" do
           マイページ
           = icon "fas", "angle-right"
       %li.mypage-nav-list__item
@@ -18,7 +18,7 @@
           いいね！一覧
           = icon "fas", "angle-right"
       %li.mypage-nav-list__item
-        = link_to '' , class: "mypage-nav-list__item__link" do
+        = link_to '/products/new' , class: "mypage-nav-list__item__link" do
           出品する
           = icon "fas", "angle-right"
       %li.mypage-nav-list__item
@@ -70,7 +70,7 @@
       %h3.mypage-nav-list__double-header
         設定
       %li.mypage-nav-list__item
-        = link_to 'identification' ,{controller: "users", action: "edit", name: "identification", class: "mypage-nav-list__item__link"} do
+        = link_to 'profile' ,{controller: "users", action: "edit", name: "profile", class: "mypage-nav-list__item__link"} do
           プロフィール
           = icon "fas", "angle-right"
       %li.mypage-nav-list__item
@@ -78,7 +78,7 @@
           発送元・お届け先住所
           = icon "fas", "angle-right"
       %li.mypage-nav-list__item
-        = link_to '' , class: "mypage-nav-list__item__link" do
+        = link_to 'card' ,{controller: "users", action: "edit", name: "card", class: "mypage-nav-list__item__link"} do
           支払い方法
           = icon "fas", "angle-right"
       %li.mypage-nav-list__item
@@ -86,7 +86,7 @@
           メール/パスワード
           = icon "fas", "angle-right"
       %li.mypage-nav-list__item
-        = link_to '' , class: "mypage-nav-list__item__link" do
+        = link_to 'identification' ,{controller: "users", action: "edit", name: "identification", class: "mypage-nav-list__item__link"} do
           本人情報
           = icon "fas", "angle-right"
       %li.mypage-nav-list__item
@@ -94,6 +94,6 @@
           電話番号の確認
           = icon "fas", "angle-right"
       %li.mypage-nav-list__item
-        = link_to '' , class: "mypage-nav-list__item__link" do
+        = link_to 'logout' ,{controller: "users", action: "edit", name: "logout", class: "mypage-nav-list__item__link"} do
           ログアウト
           = icon "fas", "angle-right"
