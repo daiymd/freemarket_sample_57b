@@ -77,6 +77,7 @@ gem 'kaminari'
 gem 'active_hash'
 gem 'font-awesome-sass', '~> 5.4.1'
 gem 'ancestry'
+gem 'gretel'
 
 group :production do
   gem 'unicorn', '5.4.1'

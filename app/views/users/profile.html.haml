@@ -1,7 +1,8 @@
 .wrapper
   = render "header"
   .wrapper__breadcrumb
-    パンくずエリア
+    - breadcrumb :profile
+    = breadcrumbs pretext: "",separator: " &rsaquo; ", class: "breadcrumbs-list"
   .wrapper__profile
     .wrapper__profile__container
       .wrapper__profile__container__contents

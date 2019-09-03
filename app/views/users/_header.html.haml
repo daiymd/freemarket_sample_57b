@@ -2,7 +2,7 @@
   .header-inner
     .header-inner_top
       .header-inner_top-title
-        = link_to "", class: "link" do
+        = link_to "/products", class: "link" do
           %img{src: "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?273499512", width: "134", height: "36"}
       .header-inner_top-search
         = form_with url: products_path, class: "search", method: :get, local: true do |f|
@@ -34,6 +34,6 @@
             = icon  "fas",'check', class: "icon-grey"
             やることリスト
         .header-inner_bottom-right-mypage
-          = link_to "", class: "link" do
+          = link_to "/users/show", class: "link" do
             = icon  "far", 'user', class: "icon-grey"
             マイページ
