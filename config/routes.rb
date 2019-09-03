@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   get 'users/:name', controller: 'users', action: 'edit'
   get 'products/:name', controller: 'products', action: 'show'
   resources :users, only: [:show] 
-  resources :products
+  resources :products,only:[:index, :new, :show]
 end
