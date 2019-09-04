@@ -4,6 +4,7 @@ class Product < ApplicationRecord
   has_many :comments
   has_many :likes
   has_one :street_address
-  has_many :images
+  has_many :images, dependent: :destroy
+  accepts_nested_attributes_for :images
   mount_uploader :image, ImageUploader
 end

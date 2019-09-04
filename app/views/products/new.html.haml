@@ -9,11 +9,18 @@
             .contents__main_block_form-image_upload
               .contents__main_block_form-image_upload-text 出品画像
               .focus 必須
-            %p 最大１０枚までアップロードできます
-            .contents__main_block_form-image_images
-              = icon 'fas', 'camera', class: 'icon'
-              .contents__main_block_form-image_images-text ドラッグアンドドロップまたはクリックしてファイルをアップロード
-              = file_field_tag :image, class: 'images', multiple: true
+            = f.fields_for :images do |image|
+              .dropzone-container
+                #preview
+                .dropzone-area
+                  = image.label :image, class: "dropzone-box", for: "upload-image" do
+                    .input_area
+                      = image.file_field :image, multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
+                      %pre ドラッグ&ドロップ またはクリックしてファイルをアップロード
+                #preview2
+                .dropzone-area2
+                  = image.label :image, class: "dropzone-box", for: "upload-image" do
+                    %p ここをクリックしてください
           .contents__main_block_form-name
             .product_name
               .product_name-text 商品名
