@@ -4,7 +4,7 @@
     .contents__main_block
       .contents__main_block-text 商品の情報を入力
       .contents__main_block_form
-        = form_with url: "users/new", method: :get, local: true do |f|
+        = form_with url: "products/new", method: :post, local: true do |f|
           .contents__main_block_form-image
             .contents__main_block_form-image_upload
               .contents__main_block_form-image_upload-text 出品画像
@@ -49,19 +49,26 @@
                 .about_box-burden-text 配送料の負担
                 .focus 必須
               .selects
-                = select "burden", "", ["--", "送料込み(出品者負担)", "着払い(購入者負担)"], {} ,{class: "selection"}    
+                = f.select "burden", ["--", "送料込み(出品者負担)", "着払い(購入者負担)"],{},{class: "selection", id:"delivery_charge"}
                 = icon "fas", "angle-down 2x", class: 'down'
+              .right-box
+                .about_box-way
+                  .about_box-way-text 配送の方法
+                  .focus 必須
+                .selects
+                  = f.select "way",[ "--" ],{},{class: "selection",id:"delivery_way"}
+                  = icon "fas", "angle-down 2x", class: 'down'
               .about_box-region
                 .about_box-region-text 発送元の地域
                 .focus 必須
               .selects 
-                = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {class: "identification-input"}
+                = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {class: "identification-input", id:"prefecture"}
                 = icon "fas", "angle-down 2x", class: 'down'
               .about_box-day 
                 .about_box-day-text 発送までの日数
                 .focus 必須
               .selects
-                = select "day", "", ["--", "1~2日で発送", "2~3日で発送", "4~7日で発送"], {} ,{class: "selection"}    
+                = f.select "day", ["--", "1~2日で発送", "2~3日で発送", "4~7日で発送"], {} ,{class: "selection", id:"day"}    
                 = icon "fas", "angle-down 2x", class: 'down'
           .contents__main_block_form-price
             .text 販売価格(300〜9,999,999)
@@ -75,7 +82,7 @@
                 .right
                   .right-text ¥  
                   .right-form
-                    = text_field_tag "price", "" ,class: 'input_price', placeholder: "例）300"
+                    = f.text_field "price",class: 'input_price', placeholder: "例）300"
               .price_box-fee
                 .left 販売手数料 (10%)
                 .right#sales_charge -
