@@ -34,7 +34,7 @@ $(document).on('turbolinks:load', function(){
         image.attr('data-image', index);
         preview2.append(image);
         dropzone2.css({
-          'width': `calc(100% - (130px * ${images.length - 5}))`
+          'width': `calc(100% - (120px * ${images.length - 5}))`
         })
       })
       if(images.length == 9) {
@@ -47,7 +47,7 @@ $(document).on('turbolinks:load', function(){
           preview.append(image);
         })
         dropzone.css({
-          'width': `calc(100% - (130px * ${images.length}))`,
+          'width': `calc(100% - (120px * ${images.length}))`,
           'float': `right`
         })
       }
@@ -98,7 +98,7 @@ $(document).on('turbolinks:load', function(){
         preview2.append(image);
       })
       dropzone2.css({
-        'width': `calc(100% - (130px * ${images.length - 5}))`
+        'width': `calc(100% - (120px * ${images.length - 5}))`
       })
       if(images.length == 9) {
         dropzone2.find('p').replaceWith('<i class="fas fa-camera"></i>')
@@ -115,7 +115,7 @@ $(document).on('turbolinks:load', function(){
         preview.append(image);
       })
       dropzone.css({
-        'width': `calc(100% - (130px * ${images.length}))`
+        'width': `calc(100% - (120px * ${images.length}))`
       })
     }
     if(images.length == 4) {
