@@ -8,4 +8,14 @@ Rails.application.routes.draw do
   get 'products/:name', controller: 'products', action: 'show'
   resources :users, only: [:show] 
   resources :products,only:[:index, :new, :show]
+  
+  resources :signup,only: [:create] do
+    collection do
+      get 'member'
+      get 'tell'
+      get 'address'
+      get 'pay' # ここで、入力の全てが終了する
+      get 'completion' # 登録完了後のページ
+    end
+  end
 end

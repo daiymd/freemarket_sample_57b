@@ -4,13 +4,14 @@
     %h2.registration__header 新規会員登録
     .registration__container__inner
       .l-single-content
-        %a.mail-btn-red
-          %i.fas.fa-envelope#icon
-          %span.mail-text メールアドレスで登録する
-        %a.facebook-btn-blue
-          %i.fab.fa-facebook-square#icon
-          %span.facebook-text Facebookで登録する
-        %a.google-btn-white
+        .mail-btn-red
+          .fas.fa-envelope#icon
+          = link_to "メールアドレスで登録する", member_signup_index_path, class: "mail-text"
+        .facebook-btn-blue
+          .fab.fa-facebook-square#icon
+          = link_to "Facebookで登録する",user_facebook_omniauth_authorize_path, method: :post, class: "facebook-text"
+        .google-btn-white
           %img{src: "https://yt3.ggpht.com/a/AGF-l78IIyXSWPuwMCI53MwhjOPlUrrFOx5laYc0ZA=s900-c-k-c0xffffffff-no-rj-mo",width: "25", height: "25",class:"googlelogo"}
-          %span.google-text Googleで登録する
+          .google-text
+            = link_to "Googleで登録する",user_google_oauth2_omniauth_authorize_path, method: :post
   = render "shared/logofooter"
