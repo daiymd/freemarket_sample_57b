@@ -1,17 +1,26 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.sign-up_container
+  = render "shared/logoheader"
+  .login-page
+    .login-page_content
+      .login-page_content-no-account
+        %p アカウントをお持ちでない方はこちら
+        = link_to "/users/signup", class:"login" do
+          新規会員登録
+      .login-page_content-btn
+        .facebook-btn-blue
+          .fab.fa-facebook-square#icon
+          = link_to "Facebookで登録する",user_facebook_omniauth_authorize_path, method: :post, class: "facebook-text"
+        .google-btn-white
+          %img{src: "https://yt3.ggpht.com/a/AGF-l78IIyXSWPuwMCI53MwhjOPlUrrFOx5laYc0ZA=s900-c-k-c0xffffffff-no-rj-mo",width: "25", height: "25",class:"googlelogo"}
+          .google-text
+            = link_to "Googleで登録する",user_google_oauth2_omniauth_authorize_path, method: :post
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .login-page_content-form
+          .login-page_content-form-group
+            = f.text_field :email, class: "form", placeholder: "メールアドレス"
+          .login-page_content-form-group
+            = f.text_field :password, class: "form", placeholder: "パスワード"
+          = f.submit "次へ進む", class: "submit-btn"
+          = link_to "", class: "pass" do
+            パスワードをお忘れの方
+  = render "shared/logofooter"
