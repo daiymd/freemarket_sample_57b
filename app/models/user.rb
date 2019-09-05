@@ -14,11 +14,15 @@ class User < ApplicationRecord
   has_many :sns_credentials, dependent: :destroy
 
   with_options presence: true do
-    validates :name
+    validates :family_name
+    validates :first_name
+    validates :family_name_kana
+    validates :first_name_kana
     validates :nickname
-    validates :furigana
     validates :password_confirmation
-    validates :birthday
+    validates :year
+    validates :month
+    validates :day
     validates :tell
   end
 

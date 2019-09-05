@@ -1,0 +1,45 @@
+= render "shared/logoheader"
+.address-container
+  = form_for @address, url: signup_index_path, method: :post do |f|
+    .address-container__header
+      住所入力
+    .address-container__content
+      .address-container__content__form-group
+        %label お名前
+        %span.form-required 必須
+        = f.text_field :address_family_name, class: "identification-input", placeholder: "例）山田"
+        = f.text_field :address_first_name, class: "identification-input", placeholder: "例）彩"
+      .address-container__content__form-group
+        %label お名前カナ
+        %span.form-required 必須
+        = f.text_field :address_family_name_kana, class: "identification-input", placeholder: "例）ヤマダ"
+        = f.text_field :address_first_name_kana, class: "identification-input", placeholder: "例）アヤ"
+      .address-container__content__form-group
+        %label 郵便番号
+        %span.form-required 必須
+        = f.text_field :postal_code, class: "identification-input", placeholder: "例）123-4567"
+      .address-container__content__form-group
+        %label 都道府県
+        %span.form-required 必須
+      .identification-select-wrap
+        = f.collection_select :prefecture, Prefecture.all, :id, :name, {class: "identification-input"}
+        = icon "fas", "angle-down 2x"
+      .address-container__content__form-group
+        %label 市区町村
+        %span.form-required 必須
+        = f.text_field :city, class: "identification-input", placeholder: "例）横浜市緑区"
+      .address-container__content__form-group
+        %label 番地
+        %span.form-required 必須
+        = f.text_field :address, class: "identification-input", placeholder: "例）青山1-1-1"
+      .address-container__content__form-group
+        %label 建物名
+        %span.form-arbitrary 任意
+        = f.text_field :building_name, class: "identification-input", placeholder: "例）柳ビル103"
+      .address-container__content__form-group
+        %label 電話
+        %span.form-arbitrary 任意
+        = f.text_field :address_tell, class: "identification-input", placeholder: "例）09012345678"
+    .address-container__btn-next
+      = f.submit "次へ進む", class:"address-btn", type:"submit"
+= render "shared/logofooter"
