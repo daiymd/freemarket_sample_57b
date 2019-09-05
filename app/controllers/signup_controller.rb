@@ -28,6 +28,10 @@ class SignupController < ApplicationController
     
   end
 
+  def completion
+    sign_in User.find(session[:id]) unless user_signed_in?
+  end
+
   def create
     @address = StreetAddress.new(address_params)
     if session[:password] == "" #sns登録なら
@@ -51,6 +55,7 @@ class SignupController < ApplicationController
       tell: session[:tell]
     )
     if @user.save 
+      session[:id] = @user.id
       @address.update(user_id:  @user.id)
       if @address.save
         redirect_to completion_signup_index_path

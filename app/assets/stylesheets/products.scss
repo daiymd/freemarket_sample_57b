@@ -135,7 +135,7 @@ li {
   &__main{
     display: block;
     &_block{
-       background-color: white;
+      background-color: white;
       @media screen and (min-width: 768px){
         width: 700px;
         margin: 0 auto;
@@ -272,10 +272,10 @@ li {
               float: right;
               width: 400px;
               margin: 0;
-             }
+            }
           &-burden{
             display: flex;
-             }
+            }
           &-region{
             display: flex;
             margin: 40px 0 0;
@@ -495,4 +495,44 @@ li {
   line-height: 1.5;
   cursor: pointer;
   -webkit-appearance:none;
+}
+
+.header-inner_bottom-right-signup {
+  // border-radius: 4px;
+  // background-color: red;
+  // height: 30px;
+  margin-right: 20px;
+  .signup {
+    background-color: rgb(234, 53, 45);
+    color: rgb(255, 255, 255);
+    display: block;
+    font-size: 14px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(234, 53, 45);
+    border-image: initial;
+    border-radius: 4px;
+    width: 100px;
+    text-align: center;
+  }
+}
+
+.header-inner_bottom-right-login {
+  // border: 1px rgb(0, 149, 238) solid;
+  // border-radius: 4px;
+  // height: 30px;
+  // padding: 1px;
+  .login {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 149, 238);
+    display: block;
+    font-size: 14px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(0, 149, 238);
+    border-image: initial;
+    border-radius: 4px;
+    width: 70px;
+    text-align: center;
+  }
 }
