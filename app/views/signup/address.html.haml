@@ -22,7 +22,7 @@
         %label 都道府県
         %span.form-required 必須
       .identification-select-wrap
-        = f.collection_select :prefecture, Prefecture.all, :id, :name, {class: "identification-input"}
+        = f.collection_select :prefecture, Prefecture.all, :id, :name, {}, class: "identification-input"
         = icon "fas", "angle-down 2x"
       .address-container__content__form-group
         %label 市区町村

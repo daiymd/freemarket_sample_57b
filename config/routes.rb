@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   resources :signup,only: [:create] do
     collection do
       get 'member'
-      get 'sns_credential'
       get 'tell'
       get 'address'
       get 'pay' # ここで、入力の全てが終了する

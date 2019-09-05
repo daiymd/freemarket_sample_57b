@@ -4,10 +4,6 @@ class SignupController < ApplicationController
     @user = User.new
   end
 
-  # def sns_credential
-  #   @user = User.new
-  # end
-
   def tell
     session[:nickname] = user_params[:nickname]
     session[:family_name] = user_params[:family_name]
@@ -21,13 +17,11 @@ class SignupController < ApplicationController
     session[:month] = user_params[:month]
     session[:day] = user_params[:day]
     @user = User.new
-    # binding.pry
   end
 
   def address
     session[:tell] = user_params[:tell]
     @address = StreetAddress.new
-    # binding.pry
   end
 
   def pay
@@ -56,12 +50,12 @@ class SignupController < ApplicationController
       day: session[:day],
       tell: session[:tell]
     )
-    binding.pry
-    # @address.saveで住所は登録できた
     if @user.save 
       @address.update(user_id:  @user.id)
       if @address.save
         redirect_to completion_signup_index_path
+      else
+        redirect_to "/users/signup"
       end
     else
       redirect_to "/users/signup"
