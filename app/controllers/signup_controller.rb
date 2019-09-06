@@ -57,6 +57,7 @@ class SignupController < ApplicationController
     if @user.save 
       session[:id] = @user.id
       @address.update(user_id:  @user.id)
+      SnsCredential.update(user_id:  @user.id)
       if @address.save
         redirect_to completion_signup_index_path
       else
