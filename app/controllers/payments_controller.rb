@@ -42,7 +42,7 @@ class PaymentsController < ApplicationController
       redirect_to action: "new"
   end
 
-  
+
  def show #Cardのデータpayjpに送り情報を取り出します
   card = Payment.where(user_id: current_user.id).first
   if card.blank?
@@ -53,4 +53,4 @@ class PaymentsController < ApplicationController
     @default_card_information = customer.cards.retrieve(card.card_id)
   end
 end
-end
+
