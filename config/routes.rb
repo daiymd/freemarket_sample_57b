@@ -8,4 +8,12 @@ Rails.application.routes.draw do
   get 'products/:name', controller: 'products', action: 'show'
   resources :users, only: [:show] 
   resources :products,only:[:index, :new, :show]
+  resources :payments, only: [:new, :show] do
+    collection do
+      post 'show', to: 'payments#show'
+      post 'pay', to: 'payments#pay'
+      post 'delete', to: 'payments#delete'
+    end
+  end
+  
 end

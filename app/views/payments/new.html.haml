@@ -1,11 +1,14 @@
-.sign-up_container
-  = render "shared/logoheader"
-  .sign-up_main
-    .sign-up_main-container
+.wrapper
+  = render "users/header"
+  .wrapper__breadcrumb
+    - breadcrumb :card
+    = breadcrumbs pretext: "",separator: " &rsaquo; ", class: "breadcrumbs-list"
+  .identification-content
+    .credit__container
       .sign-up_main-container-head
-        支払い方法
+        クレジットカード登録
       .sign-up_main-container_registration
-        = form_with  method: :post, id: "#charge-form" ,local:true do |f|
+        = form_with url: pay_payments_path, method: :post ,id: "charge-form"  do |f|
           .sign-up_main-container_registration-content
             .sign-up_main-container_registration-content-form
               = f.label :nickname do
@@ -20,22 +23,25 @@
               .month-select
                 .month-select-wrap{class: "month-select-wrap_month"}
                   = icon "fas", "angle-down 2x", class: "icon"
-                  = f.select :month, ["--", "1", "2", "3", "4", "5", "6", "7","8", "9", "10", "11", "12"], { class: "select" ,id:"exp_month",name: "exp_month"}
+                  = f.select :month, ["--", "1", "2", "3", "4", "5", "6", "7","8", "9", "10", "11", "12"], { class: "select" ,id:"exp_month"}
                 %span 月
                 .year-select-wrap{class: "year-select-wrap_year"}
                   = icon "fas", "angle-down 2x", class: "icon"
-                  = f.select :year, ["--", "19", "20", "21", "22", "23", "24", "25"], { class: "select" ,id:"exp_year",name: "exp_year"}
+                  = f.select :year, ["--", "2019", "2020", "2021", "2022", "2023", "2024", "2025"], { class: "select" ,id:"exp_year"}
                 %span 年
             .sign-up_main-container_registration-content-form{class: "bottom"}
               = f.label :nickname do
                 セキュリティーコード
               %span{class: "form-require"}必須
-              = f.text_field :nickname, class: "input-default", placeholder: "カード背面4桁もしくは3桁の番号",id: "payment_card_cvc",name:"cvc"
+              = f.text_field :nickname, class: "input-default", placeholder: "カード背面4桁もしくは3桁の番号",id: "payment_card_cvc"
             .sign-up_main-container_registration-content-form
               %p
                 = link_to "", class: "form-text-blue" do
                   = icon "fas", "question-circle"
                   カード裏面の番号とは？
             .sign-up_main-container_registration-content-form
-              = f.submit "次へ進む", class: "submit-btn",id: "token_submit"
-  = render "shared/logofooter"
+              =link_to "/payments/show",{controller: "payments", action: "show"} do
+                = f.submit "登録", class: "submit-btn",id: "token_submit"
+    =render "users/sidebar"        
+= render "users/footer"
+= render "users/exhibit"           
