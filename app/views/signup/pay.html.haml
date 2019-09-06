@@ -5,7 +5,7 @@
       .sign-up_main-container-head
         支払い方法
       .sign-up_main-container_registration
-        = form_for @user, url: "/signup/completion", method: :get do |f|
+        = form_with url: "/signup/completion", method: :get, local: true do |f|
           .sign-up_main-container_registration-content
             .sign-up_main-container_registration-content-form
               = f.label :nickname do
@@ -20,11 +20,11 @@
               .birthday-select
                 .birthday-select-wrap{class: "birthday-select-wrap_month"}
                   = icon "fas", "angle-down 2x", class: "icon"
-                  = f.select :birthday, ["--", "1", "2", "3", "4", "5", "6", "7"], { class: "select" }
+                  = f.select :birthday, ["--", "1", "2", "3", "4", "5", "6", "7"], {}, class: "select"
                 %span 月
                 .birthday-select-wrap{class: "birthday-select-wrap_day"}
                   = icon "fas", "angle-down 2x", class: "icon"
-                  = f.select :birthday, ["--", "1", "2", "3", "4", "5", "6", "7"], { class: "select" }
+                  = f.select :birthday, ["--", "1", "2", "3", "4", "5", "6", "7"], {}, class: "select"
                 %span 年
             .sign-up_main-container_registration-content-form{class: "bottom"}
               = f.label :nickname do
