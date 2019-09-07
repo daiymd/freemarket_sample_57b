@@ -5,21 +5,16 @@ class PaymentsController < ApplicationController
 
   def new
     card = Payment.where(user_id: current_user.id)
-    
   end
 
-  def pay #クレジットカード登録
+  def pay 
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     if params["payjpToken"].blank?
-    # paramsの中にjsで作った'payjpTokenが存在するか確かめる
     redirect_to action: "show"
     else
       customer = Payjp::Customer.create(card: params["payjpToken"],metadata: {user_id: current_user.id})
-
-     # ↑ここでpay.jpに保存
       @card = Payment.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
-      
-     # ここでdbに保存
+
       if @card.save
         redirect_to action: "show"
         flash[:notice] = 'クレジットカードの登録が完了しました'
@@ -30,8 +25,8 @@ class PaymentsController < ApplicationController
     end
   end
 
-  def delete #PayjpとCardデータベースを削除します
-    card = Card.where(user_id: current_user.id).first
+  def delete 
+    card = Payment.where(user_id: current_user.id).first
     if card.blank?
     else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
@@ -43,7 +38,7 @@ class PaymentsController < ApplicationController
   end
 
 
- def show #Cardのデータpayjpに送り情報を取り出します
+ def show 
   card = Payment.where(user_id: current_user.id).first
   if card.blank?
     redirect_to action: "new" 
@@ -54,3 +49,4 @@ class PaymentsController < ApplicationController
   end
 end
 
+end

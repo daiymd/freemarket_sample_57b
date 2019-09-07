@@ -1,3 +1,58 @@
-購入が完了しました！
-%img{src: "https://static.mercdn.net/thumb/photos/m21694605444_1.jpg?1565745931" ,width: "64", height: "52.97"}
-%p ¥61,500(送料込み)
+.contents
+  = render "shared/logoheader"
+  .main.single-main
+    .purchase-head
+      購入が完了しました!
+    .purchase-products
+      .purchase-products__image
+        %img{src: "https://static.mercdn.net/thumb/photos/m21694605444_1.jpg?1565745931" ,width: "150", height: "150"}
+      .purchase-products__inner
+      .purchase-product-name.bold
+        28cm NIKE LD waffle Sacai
+      .purchase-user-info  
+        .purchase-products__price.bold
+          ¥61,500
+          %span.purchase-products__shipping-fee
+            送料込み
+    .purchase-user-info
+      .purchase-user-info__delivery 配送先
+      .purchase-user-info__zipcode
+        〒123-4567
+      .purchase-user-info__adress
+        大阪府大阪市中央区難波5-1-60 
+        %br
+        kkkkkk
+    .purchase-card-info
+      .purchase-card-info__pay-fix
+        支払い方法
+      .purchase-card-info__number
+      = "**** **** ****" + @default_card_information.last4
+      .purchase-card-info__expire
+      - exp_month = @default_card_information.exp_month.to_s
+      - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+      = exp_month + " / " + exp_year
+      .purchase-user-info-card__pay-fix-method
+        = image_tag src="/assets/Visa_Inc._logo.svg.png", size: "49x15"
+    .purchase-after
+      .purchase-after-inner
+      .purchase-after-inner_message
+        .iconbox
+          ✨
+          = icon "fas",'smile',class: "smile"
+          = icon "fas", 'meh',class: "meh"
+          = icon 'fas', "angry", class: "angry"
+          ✨
+        %br
+        発送通知後の流れ
+        %br
+        商品を受け取ったら
+        %br
+        出品者の評価をしましょう。
+        %br
+        購入代金が出品者に振り込まれます。
+        %br
+        評価後に取引は完了です。
+        %br
+        = link_to "/users/show", class: "link" do
+          マイページへ戻る
+  =render "shared/logofooter"

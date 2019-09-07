@@ -20,9 +20,8 @@
             支払い金額
             %span.purchase-products__price-cell ¥ 61,500
           .purchase-products__btn
-            %br
-            = form_tag(action: :pay, method: :post) do
-              %button 購入する 
+            = form_with url: pay_purchase_index_path, action: :pay, method: :post,class: :buy do
+              %button.btn-default.btn-red 購入する 
     .purchase-user-info
       .purchase-user-info__delivery 配送先
       .purchase-user-info__zipcode
@@ -38,9 +37,11 @@
       .purchase-card-info__pay-fix
         支払い方法
       .purchase-card-info__number
-        **** **** **** ****
+      = "**** **** ****" + @default_card_information.last4
       .purchase-card-info__expire
-        05/24
+      - exp_month = @default_card_information.exp_month.to_s
+      - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+      = exp_month + " / " + exp_year
       .purchase-user-info-card__pay-fix-method
         = image_tag src="/assets/Visa_Inc._logo.svg.png", size: "49x15"
       %a.purchase-user-info__change-btn
