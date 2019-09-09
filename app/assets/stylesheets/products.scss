@@ -163,22 +163,92 @@ li {
         p{
           font-size: 12px
         }
-        &_images{
+        .dropzone-container{
+          @include clearfix;
           position: relative;
           min-height: 162px;
-          background: #f5f5f5;
-          border: 1px dashed #ccc;
+          max-height: 330px;
           font-size: 0;
           text-align: center;
-          cursor: pointer;
+          display: flex;
           @media screen and (min-width: 768px){
             display: block;
             width: 620px;
           }
-          .images{
-              display: none;
+          .btn_wrapper{
+            font-size: 14px;
+            .btn_edit{
+              display: inline-block;
+              width: 50%;
+              background: #f5f5f5;
+              line-height: 44px;
+              text-align: center;
             }
-          }  
+            .btn_delete{
+              display: inline-block;
+              width: 50%;
+              background: #f5f5f5;
+              line-height: 44px;
+              text-align: center;
+            }
+          }
+          #preview{
+            float: left;
+            display: flex;
+            .img_view{
+              margin-right: 10px;
+            }
+          }
+          #preview2{
+            float: left;
+            display: flex;
+            flex-wrap: wrap;
+            .img_view{
+              margin-right: 10px;
+            }
+          }
+          img{
+            height: 114px;
+            width: 114px;
+          }
+          pre{
+            position: absolute;
+            top: 50%;
+            left: 16px;
+            right: 16px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.5;
+            -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+            pointer-events: none;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            display: block;
+          }
+          .input_area{
+            height: 162px;
+            width: 100%;
+            position: relative;
+            cursor: pointer;
+              .upload-image{
+                display: none;
+              }
+            }
+          }
+          .dropzone-area{
+            background: #f5f5f5;
+            border: 1px dashed #ccc;
+          }
+          .dropzone-area2{
+            height: 162px;
+            display: none;
+            float: right;
+            right: 0;
+            bottom: 0;
+            background: #f5f5f5;
+            border: 1px dashed #ccc;
+          }
         }
         &-name{
           padding: 40px;
@@ -271,6 +341,10 @@ li {
           &-burden{
             display: flex;
              }
+          &-way{
+            display: flex;
+            margin: 40px 0 0;
+            }
           &-region{
             display: flex;
             margin: 40px 0 0;
@@ -490,4 +564,23 @@ li {
   line-height: 1.5;
   cursor: pointer;
   -webkit-appearance:none;
+}
+
+#way{
+  position: relative;
+    width: 100%;
+    z-index: 2;
+    height: 48px;
+    padding: 0 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+.right-box{
+  display: none;
 }
