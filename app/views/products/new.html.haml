@@ -20,7 +20,9 @@
                 #preview2
                 .dropzone-area2
                   = image.label :image, class: "dropzone-box", for: "upload-image" do
-                    %p ここをクリックしてください
+                    .input_area
+                      = image.file_field :image, multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
+                      %pre ここをクリックしてください
           .contents__main_block_form-name
             .product_name
               .product_name-text 商品名

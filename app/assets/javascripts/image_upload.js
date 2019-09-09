@@ -34,7 +34,7 @@ $(document).on('turbolinks:load', function(){
         image.attr('data-image', index);
         preview2.append(image);
         dropzone2.css({
-          'width': `calc(100% - (120px * ${images.length - 5}))`
+          'width': `calc(100% - (125px * ${images.length - 5}))`
         })
       })
       if(images.length == 9) {
@@ -47,7 +47,7 @@ $(document).on('turbolinks:load', function(){
           preview.append(image);
         })
         dropzone.css({
-          'width': `calc(100% - (120px * ${images.length}))`,
+          'width': `calc(100% - (125px * ${images.length}))`,
           'float': `right`
         })
       }
@@ -59,6 +59,11 @@ $(document).on('turbolinks:load', function(){
         'display': 'none'
       })
       return;
+    }
+    if(images.length >= 6) {
+      dropzone2.css({
+        'position': 'absolute'
+      })
     }
     var new_image = $(`<input multiple= "multiple" name="images[image][]" class="upload-image" data-image= ${images.length} type="file" id="upload-image">`);
     input_area.prepend(new_image);
@@ -98,7 +103,7 @@ $(document).on('turbolinks:load', function(){
         preview2.append(image);
       })
       dropzone2.css({
-        'width': `calc(100% - (120px * ${images.length - 5}))`
+        'width': `calc(100% - (125px * ${images.length - 5}))`
       })
       if(images.length == 9) {
         dropzone2.find('p').replaceWith('<i class="fas fa-camera"></i>')
@@ -115,7 +120,7 @@ $(document).on('turbolinks:load', function(){
         preview.append(image);
       })
       dropzone.css({
-        'width': `calc(100% - (120px * ${images.length}))`
+        'width': `calc(100% - (125px * ${images.length}))`
       })
     }
     if(images.length == 4) {
@@ -125,6 +130,11 @@ $(document).on('turbolinks:load', function(){
     }
     if(images.length == 3) {
       dropzone.find('i').replaceWith('<p>ココをクリックしてください</p>')
+    }
+    if(images.length == 5) {
+      dropzone2.css({
+        'position': 'relative'
+      })
     }
   })
 });
