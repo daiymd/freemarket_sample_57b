@@ -2,6 +2,10 @@ body {
   background: rgb(245, 245, 245);
 }
 
+.hidden {
+  display: noen;
+}
+
 .sign-up_header {
   height: 128px;
   text-align: center;
@@ -148,6 +152,7 @@ body {
               }
               // セレクトのボタンを消す
               #year {
+              .select {
                 -webkit-appearance:none;
                 padding: 0 10px;
                 width: 100%;
@@ -160,6 +165,7 @@ body {
                 font-size: 16px;
                 line-height: 1.5;
                 cursor: pointer;
+                font-size: 14px;
               }
             }
           }
@@ -185,4 +191,5 @@ body {
     }
   }
 
+  }
 }

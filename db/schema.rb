@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_03_052906) do
+ActiveRecord::Schema.define(version: 2019_09_04_030556) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "prefecture_id"
@@ -93,6 +93,11 @@ ActiveRecord::Schema.define(version: 2019_09_03_052906) do
     t.string "address", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "address_family_name", null: false
+    t.string "address_first_name", null: false
+    t.string "address_family_name_kana", null: false
+    t.string "address_first_name_kana", null: false
+    t.string "address_tell"
   end
 
   create_table "transactions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -106,10 +111,7 @@ ActiveRecord::Schema.define(version: 2019_09_03_052906) do
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "name", null: false
     t.string "nickname", null: false
-    t.string "furigana", null: false
-    t.string "birthday", null: false
     t.integer "tell", null: false
     t.string "image"
     t.text "text"
@@ -120,6 +122,13 @@ ActiveRecord::Schema.define(version: 2019_09_03_052906) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "family_name", null: false
+    t.string "first_name", null: false
+    t.string "family_name_kana", null: false
+    t.string "first_name_kana", null: false
+    t.integer "year", null: false
+    t.integer "month", null: false
+    t.integer "day", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

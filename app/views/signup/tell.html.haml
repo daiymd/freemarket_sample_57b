@@ -4,18 +4,17 @@
     .tell-container__width-box__header
       .tell-container__width-box__header__tell
         電話番号の確認
-    %form.tell-container__width-box__form
+    = form_for @user, url: "/signup/address", method: :get do |f|
       .tell-container__width-box__form__box
         .tell-container__width-box__form__box__content
           .tell-container__width-box__form__box__content__tell-box
             %h2.tell-container__width-box__form__box__content____tell-box__header
               携帯電話の番号
-            %input{class:"tell-numbers-input", type:"text", placeholder:"携帯電話の番号を入力"}
+            = f.text_field :tell ,class:"tell-numbers-input", placeholder:"携帯電話の番号を入力"
             .tell-container__width-box__form__box__content__tell-box__message
               本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
         .tell-container__width-box__form__box__btn-box
-          %button{class:"sms-send-btn", type:"submit"}
-            SMSを送信する
+          = f.submit "SMSを送信する", class:"sms-send-btn"
         .tell-container__width-box__form__box__sms-message
           *電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
         .tell-container__width-box__footer

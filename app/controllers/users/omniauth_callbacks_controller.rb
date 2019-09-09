@@ -14,7 +14,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     info = User.find_oauth(request.env["omniauth.auth"]) #usersモデルのメソッド
     @user = info[:user]
     sns_id = info[:sns_id]
+    # binding.pry
     if @user.persisted? #userが存在したら
+      SnsCredential.update(user_id: @user.id)
       sign_in_and_redirect @user, event: :authentication
       set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
     else #userが存在しなかったら

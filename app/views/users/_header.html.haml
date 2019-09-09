@@ -20,20 +20,29 @@
           = link_to "", class: "link" do
             = icon "fas","tags", class: "icon-red"
             ブランドから探す
-      .header-inner_bottom-right
-        .header-inner_bottom-right-like
-          = link_to "", class: "link" do
-            = icon  "fas",'heart', class: "icon-grey"
-            いいね！一覧
-        .header-inner_bottom-right-news
-          = link_to "", class: "link" do
-            = icon  "fas",'bell', class: "icon-grey"
-            お知らせ
-        .header-inner_bottom-right-todo
-          = link_to "", class: "link" do
-            = icon  "fas",'check', class: "icon-grey"
-            やることリスト
-        .header-inner_bottom-right-mypage
-          = link_to "/users/show", class: "link" do
-            = icon  "far", 'user', class: "icon-grey"
-            マイページ
+      - if user_signed_in?
+        .header-inner_bottom-right
+          .header-inner_bottom-right-like
+            = link_to "", class: "link" do
+              = icon  "fas",'heart', class: "icon-grey"
+              いいね！一覧
+          .header-inner_bottom-right-news
+            = link_to "", class: "link" do
+              = icon  "fas",'bell', class: "icon-grey"
+              お知らせ
+          .header-inner_bottom-right-todo
+            = link_to "", class: "link" do
+              = icon  "fas",'check', class: "icon-grey"
+              やることリスト
+          .header-inner_bottom-right-mypage
+            = link_to "/users/show", class: "link" do
+              = icon  "far", 'user', class: "icon-grey"
+              マイページ
+      - unless user_signed_in?
+        .header-inner_bottom-right
+          .header-inner_bottom-right-signup
+            = link_to "/users/signup", class: "signup" do
+              新規会員登録
+          .header-inner_bottom-right-login
+            = link_to "/users/sign_in", class: "login" do
+              ログイン
