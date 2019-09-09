@@ -28,17 +28,19 @@
           .contents__main_block_form-detail
             .text 商品の詳細
             .detail_box
-              .detail_box-category
-                .detail_box-category-text カテゴリー
-                .focus 必須
-              .selects
-                = select "category", "", ["--", "レディース", "メンズ", "ベビー・キッズ", "インテリア・住まい・小物", "本・音楽・ゲーム", "おもちゃ・ホビー・グッズ", "コスメ・香水・美容", "家電・スマホ・カメラ", "スポーツ・レジャー", "ハンドメイド", "チケット", "自動車・オートバイ", "その他"], {} ,{class: "selection"}
-                = icon "fas", "angle-down 2x", class: 'down'
+              .detail-box-wrapper
+                .detail_box-category
+                  .detail_box-category-text カテゴリー
+                  .focus 必須
+                .selects
+                  = f.select :category_id, @category_parent_array, {}, {class: "selection"}
+                  -# = f.select "category", "", ["--", "レディース", "メンズ", "ベビー・キッズ", "インテリア・住まい・小物", "本・音楽・ゲーム", "おもちゃ・ホビー・グッズ", "コスメ・香水・美容", "家電・スマホ・カメラ", "スポーツ・レジャー", "ハンドメイド", "チケット", "自動車・オートバイ", "その他"], {} ,{class: "selection"}
+                  = icon "fas", "angle-down 2x", class: 'down'
               .detail_box-state
                 .detail_box-state-text 商品の状態
                 .focus 必須
               .selects
-                = select "state", "", ["--", "レディース", "メンズ", "ベビー・キッズ", "インテリア・住まい・小物", "本・音楽・ゲーム", "おもちゃ・ホビー・グッズ", "コスメ・香水・美容", "家電・スマホ・カメラ", "スポーツ・レジャー", "ハンドメイド", "チケット", "自動車・オートバイ", "その他"], {} ,{class: "selection"}
+                = select "state", "", ["--", "新品、未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり", "全体的に状態が悪い"], {}, {class: "selection"}
                 = icon "fas", "angle-down 2x", class: 'down'
           .contents__main_block_form-about
             .text 配送について
