@@ -9,4 +9,9 @@ class UsersController < ApplicationController
     render "users/#{params[:name]}"
     # , locals: {user: current_user }
   end
+
+
+  def pay
+    
+  end
 end
