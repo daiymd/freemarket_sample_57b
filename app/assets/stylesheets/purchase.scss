@@ -31,7 +31,7 @@ color:#333333;
   margin: 0 auto;
 }
 &__image{
-text-align: center;
+float: left;
   img{
     max-height: 150px;
     width: auto;
@@ -43,7 +43,6 @@ font-size:14px;
 height:52.97px;
 line-height:1.5;
 text-align: left;
-float:right;
 width: calc(100% - 80px);
 }
 &__box{
