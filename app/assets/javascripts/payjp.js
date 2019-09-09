@@ -22,7 +22,6 @@ $(document).on('turbolinks:load', function() {
         $("#year").removeAttr("name");
 
         var token = response.id;
-        console.log(token)
         form.append($('<input type="hidden" name="payjpToken" />').val(token));
         form.get(0).submit();
         window.location

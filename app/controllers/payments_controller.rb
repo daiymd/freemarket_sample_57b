@@ -39,7 +39,7 @@ class PaymentsController < ApplicationController
 
 
  def show 
-  card = Payment.where(user_id: current_user.id).first
+  card = Payment.find_by(user_id: current_user.id)
   if card.blank?
     redirect_to action: "new" 
   else
