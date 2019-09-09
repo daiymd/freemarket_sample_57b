@@ -15,6 +15,7 @@ $(function() {
           ${ insertHTML }
         </select>
         <i class="fas fa-angle-down 2x down"></i>
+      </div>` 
     $('.detail-box-wrapper').append(childSelectHtml);
   } 
   function appendGrandchildrenBox(insertHTML){
