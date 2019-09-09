@@ -70,7 +70,7 @@
       %h3.mypage-nav-list__double-header
         設定
       %li.mypage-nav-list__item
-        = link_to 'profile' ,{controller: "users", action: "edit", name: "profile", class: "mypage-nav-list__item__link"} do
+        = link_to '/users/profile' ,{controller: "users", action: "edit", name: "profile", class: "mypage-nav-list__item__link"} do
           プロフィール
           = icon "fas", "angle-right"
       %li.mypage-nav-list__item
@@ -86,7 +86,7 @@
           メール/パスワード
           = icon "fas", "angle-right"
       %li.mypage-nav-list__item
-        = link_to 'identification' ,{controller: "users", action: "edit", name: "identification", class: "mypage-nav-list__item__link"} do
+        = link_to '/users/identification' ,{controller: "users", action: "edit", name: "identification", class: "mypage-nav-list__item__link"} do
           本人情報
           = icon "fas", "angle-right"
       %li.mypage-nav-list__item
@@ -94,6 +94,6 @@
           電話番号の確認
           = icon "fas", "angle-right"
       %li.mypage-nav-list__item
-        = link_to 'logout' ,{controller: "users", action: "edit", name: "logout", class: "mypage-nav-list__item__link"} do
+        = link_to '/usaes/logout' ,{controller: "users", action: "edit", name: "logout", class: "mypage-nav-list__item__link"} do
           ログアウト
           = icon "fas", "angle-right"

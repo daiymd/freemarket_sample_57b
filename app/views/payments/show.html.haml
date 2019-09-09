@@ -32,7 +32,7 @@
         %h3.credit__container-inner-content クレジットカード一覧
         .logout-box
           .logout-box__btn
-            = link_to "new",{ controller: "payments", action: "show", class:"btn-default btn-red"} do
+            = link_to "/payments/new",{ controller: "payments", action: "show", class:"btn-default btn-red"} do
               クレジットカードを登録する
     =render "users/sidebar"        
   = render "users/footer"
