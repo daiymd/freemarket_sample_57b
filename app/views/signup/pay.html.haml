@@ -12,7 +12,7 @@
                 カード番号
               %span{class: "form-require"}必須
               = f.text_field :nickname, class: "input-default", placeholder: "半角数字のみ", id: "card_number", name: "number"
-              %img{src: "https://www.sbpayment.jp/images/service/card.png", width: "300", height: "45"}
+              = image_tag src= "https://www.sbpayment.jp/images/service/card.png", width: "300", height: "45"
             .sign-up_main-container_registration-content-form
               = f.label :nickname do
                 有効期限
