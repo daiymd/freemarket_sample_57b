@@ -7,12 +7,14 @@ class ProductsController < ApplicationController
   end
 
   def new
+    
     @product = Product.new
     @product.images.build
     @category_parent_array = ["--"]
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
     end
+    
   end
 
   def get_category_children
@@ -30,16 +32,16 @@ class ProductsController < ApplicationController
     end
    
   end
-end
 
   def create
-    @product = Product.new(product_parameter)
+
+    @product = Product.new(product_params)    
     respond_to do |format|
-      if @product.save
-          params[:images][:image].each do |image|
+      if @product.save 
+        params[:images][:image].each do |image|
             @product.images.create(image: image, product_id: @product.id)
           end
-        format.html{redirect_to root_path}
+        format.html{redirect_to products_path}
       else
         @product.images.build
         format.html{render action: 'new'}
@@ -47,8 +49,10 @@ end
     end
   end
 
-  def product_parameter
-    params.require(:product).permit(:name, :price, :status, :delivery_price, :delivery_way, :scheduled, images_attributes: [:image]).merge(user_id: current_user.id)
+  private
+  def product_params
+    params.require(:product).permit(:name, :price, :status, :delivery_price, :delivery_way, :scheduled, images_attributes:  [:image])
+    
   end
 
 end
