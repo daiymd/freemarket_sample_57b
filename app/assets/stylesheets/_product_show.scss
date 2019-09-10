@@ -1,4 +1,71 @@
 .item{
+  tbody{
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+    font-size: 14px;
+  }
+  tr{
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+  }
+  th{
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+    text-align: -internal-center;
+  }
+  
+  a{
+    // color: #0099e8;
+    // text-decoration: none;
+    // font-size: 14px;
+    // width: 100%;
+  }
+  
+  p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
+  
+  button {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 40px;
+    -webkit-transition: all ease-out .3s;
+    transition: all ease-out .3s;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  ul, ol {
+    list-style: none;
+  }
+  
+  li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+  }
+  
+  section {
+    display: block;
+  }
+  
+  .smile{
+    color: #ef5185;
+  }
+  .meh{
+    color: #fba933;
+  }
+  .angry{
+    color: #6ab5d8;
+  }
   &__show{
     background: #fff;
     margin: 40px auto 0;
@@ -392,70 +459,3 @@
 
 
 
-tbody{
-  display: table-row-group;
-  vertical-align: middle;
-  border-color: inherit;
-  font-size: 14px;
-}
-tr{
-  display: table-row;
-  vertical-align: inherit;
-  border-color: inherit;
-}
-th{
-  display: table-cell;
-  vertical-align: inherit;
-  font-weight: bold;
-  text-align: -internal-center;
-}
-
-a{
-  color: #0099e8;
-  text-decoration: none;
-  font-size: 14px;
-  width: 100%;
-}
-
-p {
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-}
-
-button {
-  display: inline-block;
-  padding: 8px 16px;
-  border-radius: 40px;
-  -webkit-transition: all ease-out .3s;
-  transition: all ease-out .3s;
-}
-
-textarea {
-  resize: vertical;
-}
-
-ul, ol {
-  list-style: none;
-}
-
-li {
-  display: list-item;
-  text-align: -webkit-match-parent;
-}
-
-section {
-  display: block;
-}
-
-.smile{
-  color: #ef5185;
-}
-.meh{
-  color: #fba933;
-}
-.angry{
-  color: #6ab5d8;
-}

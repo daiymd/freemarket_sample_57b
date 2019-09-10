@@ -16,7 +16,6 @@
 
 .bold{
 font-weight:600;
-font-size: 22px;
 }
 .purchase-products{
 background-color: white;
@@ -32,7 +31,7 @@ color:#333333;
   margin: 0 auto;
 }
 &__image{
-text-align: center;
+float: left;
   img{
     max-height: 150px;
     width: auto;
@@ -44,7 +43,6 @@ font-size:14px;
 height:52.97px;
 line-height:1.5;
 text-align: left;
-float:right;
 width: calc(100% - 80px);
 }
 &__box{
@@ -81,7 +79,6 @@ float: right;
 &__btn{
 height:50px;
 background-color:#ea352d;
-line-height:50px;
 text-align: center;
 margin-top:8px;
 color:white;
@@ -154,4 +151,19 @@ color:#333333;
   color:#333333;
   
   }  
+
+}
+
+.purchase-product-name{
+  margin: 40px 0 0;
+  padding: 24px 12.5% 0;
+  background-color: white;
+  text-align: center;
+}
+
+
+.buy{
+  .button{
+    color: red;
+  }
 }

@@ -1,5 +1,5 @@
 %header
-= render "header"
+= render "users/header"
 
 .item
   .item__show
@@ -12,11 +12,11 @@
           %tr
             %th 出品者
             %td
-              = link_to "" do
+              = link_to "", class: "link_blue" do
                 ⭐️
               .ratebox
                 .ratings
-                  = icon "fas",'smile',class: "smile"
+                  = icon "fas",'smile',class: ""
                   %span (^^)
                 .ratings
                   = icon "fas", 'meh',class: "meh"
@@ -27,11 +27,11 @@
           %tr
             %th カテゴリー
             %td.category
-              = link_to "" do
+              = link_to "", class: "link_blue" do
                 %div 石
-              = link_to "" do
+              = link_to "", class: "link_blue" do
                 %div > その辺に落ちてる
-              = link_to "" do
+              = link_to "", class: "link_blue" do
                 %div > 石  
           %tr
             %th ブランド
@@ -48,7 +48,7 @@
           %tr
             %th 配送元地域
             %td
-              = link_to "" do
+              = link_to "", class: "link_blue" do
                 川
           %tr
             %th 発送日の目安
@@ -88,11 +88,11 @@
           %span コメントする
   %ul.next
     %li.link-preview
-      = link_to "" do
+      = link_to "", class: "link_blue" do
         = icon "fa-arrow-left", class: "left"
         路傍の石
     %li.link-next
-      = link_to "" do
+      = link_to "", class: "link_blue" do
         = icon "fa-arrow-right", class: "right"
         岩
   .item__media
@@ -113,7 +113,7 @@
   .item__user
     %section
       .box-head
-        = link_to "" do
+        = link_to "", class: "link_blue" do
           💫さんのその他の出品
       .items-box
         = render "products"
@@ -121,7 +121,7 @@
         = render "products"
     %section
       .box-head
-        = link_to "" do
+        = link_to "", class: "link_blue"do
           石（石）その他の商品
       .items-box
         = render "products"
@@ -136,4 +136,4 @@
       %li 
         %span その辺で拾った石
 %banner
-= render "footer"
+= render "users/footer"

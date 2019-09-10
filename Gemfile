@@ -77,6 +77,13 @@ gem 'kaminari'
 gem 'active_hash'
 gem 'font-awesome-sass', '~> 5.4.1'
 gem 'ancestry'
+gem 'omniauth'
+gem "omniauth-rails_csrf_protection"
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'dotenv-rails'
+gem 'gretel'
+gem 'payjp'
 
 group :production do
   gem 'unicorn', '5.4.1'

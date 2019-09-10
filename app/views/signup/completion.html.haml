@@ -10,7 +10,7 @@
       会員登録が完了しました。
   .completion-container__btn
     %button{class:"start-btn", type:"submit"}
-      メルカリをはじめる
+      = link_to "メルカリをはじめる",root_path, class: "link_white"
   .completion-container__banner
-    = render "footer-top"
+    = render "users/footer-top"
 = render "shared/logofooter"

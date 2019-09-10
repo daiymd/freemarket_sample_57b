@@ -1,41 +1,71 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :name
-    %br/
-    = f.text_field :name, autofocus: true, autocomplete: "name"
-  .field
-    = f.label :nickname
-    %br/
-    = f.text_field :nickname, autofocus: true, autocomplete: "nickname"
-  .field
-    = f.label :furigana
-    %br/
-    = f.text_field :furigana, autofocus: true, autocomplete: "furigana"
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :birthday
-    %br/
-    = f.text_field :birthday, autofocus: true, autocomplete: "birthday"
-  .field
-    = f.label :tell
-    %br/
-    = f.text_field :tell, autofocus: true, autocomplete: "tell"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.sign-up_container
+  = render "shared/logoheader"
+  .sign-up_main
+    .sign-up_main-container
+      .sign-up_main-container-head
+        会員情報入力
+      .sign-up_main-container_registration
+        = form_for(resource, as: resource_name, url: tell_signup_index_path,method: :get) do |f|
+          .sign-up_main-container_registration-content
+            .sign-up_main-container_registration-content-form
+              = f.label :nickname do
+                ニックネーム
+              %span{class: "form-require"}必須
+              = f.text_field :nickname, class: "input-default", placeholder: "例)メルカリ",name: "user[nickname]"
+            .sign-up_main-container_registration-content-form
+              = f.label :email do
+                メールアドレス
+              %span{class: "form-require"}必須
+              = f.text_field :email, class: "input-default", placeholder: "PC・携帯どちらでも可"
+              = f.hidden_field :password, class: "input-default", placeholder: "7文字以上"
+              = f.hidden_field :password_confirmation, class: "input-default", placeholder: "7文字以上"
+            .sign-up_main-container_registration-content-form
+              %h3 本人確認
+              %div{class: "form-text"} 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+            .sign-up_main-container_registration-content-form
+              %div
+                = f.label :family_name do
+                  お名前(全角)
+                %span{class: "form-require"}必須
+              = f.text_field :family_name, class: "input-default-half", placeholder: "例)山田"
+              = f.text_field :first_name, class: "input-default-half", placeholder: "例）彩"
+            .sign-up_main-container_registration-content-form
+              %div
+                = f.label :family_name_kana do
+                  お名前カナ(全角)
+                %span{class: "form-require"}必須
+              = f.text_field :family_name_kana, class: "input-default-half", placeholder: "例)ヤマダ"
+              = f.text_field :first_name_kana, class: "input-default-half", placeholder: "例)アヤ"
+            .sign-up_main-container_registration-content-form
+              = f.label :year do
+                生年月日
+              %span{class: "form-require"}必須
+              .birthday-select
+                .birthday-select-wrap
+                  = icon "fas", "angle-down 2x", class: "icon"
+                  = f.select :year, ["--", "2019", "2018", "2017", "2016", "2015"], {}, class: "select"
+                %span 年
+                .birthday-select-wrap{class: "birthday-select-wrap_month"}
+                  = icon "fas", "angle-down 2x", class: "icon"
+                  = f.select :month, ["--", "1", "2", "3", "4", "5", "6", "7"], {}, class: "select"
+                %span 月
+                .birthday-select-wrap{class: "birthday-select-wrap_day"}
+                  = icon "fas", "angle-down 2x", class: "icon"
+                  = f.select :day, ["--", "1", "2", "3", "4", "5", "6", "7"], {}, class: "select"
+                %span 日
+            .sign-up_main-container_registration-content-form-text
+              ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+          .sign-up_main-container_registration-content
+            .sign-up_main-container_registration-content-form
+              .sign-up_main-container_registration-content-form-text-center
+                「次へ進む」のボタンを押すことにより、
+                = link_to "", class: "form-text-blue" do
+                  利用規約
+                に同意したものとみなします
+            = f.submit "次へ進む", class: "submit-btn"
+            .sign-up_main-container_registration-content-form
+              %p
+                = link_to "", class: "form-text-blue" do
+                  本人情報の登録について
+                  = icon "fas", "arrow-right"
+  = render "shared/logofooter"

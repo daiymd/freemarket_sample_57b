@@ -5,37 +5,37 @@
       .sign-up_main-container-head
         支払い方法
       .sign-up_main-container_registration
-        = form_with url: "/users/member", method: :get, local: true do |f|
+        = form_with  method: :post, id: "#charge-form" ,local:true do |f|
           .sign-up_main-container_registration-content
             .sign-up_main-container_registration-content-form
               = f.label :nickname do
                 カード番号
               %span{class: "form-require"}必須
-              = f.text_field :nickname, class: "input-default", placeholder: "半角数字のみ"
-              %img{src: "https://www.sbpayment.jp/images/service/card.png", width: "300", height: "45"}
+              = f.text_field :nickname, class: "input-default", placeholder: "半角数字のみ", id: "card_number", name: "number"
+              = image_tag src= "https://www.sbpayment.jp/images/service/card.png", width: "300", height: "45"
             .sign-up_main-container_registration-content-form
               = f.label :nickname do
                 有効期限
               %span{class: "form-require"}必須
-              .birthday-select
-                .birthday-select-wrap{class: "birthday-select-wrap_month"}
+              .month-select
+                .month-select-wrap{class: "month-select-wrap_month"}
                   = icon "fas", "angle-down 2x", class: "icon"
-                  = f.select :birthday, ["--", "1", "2", "3", "4", "5", "6", "7"], { class: "select" }
+                  = f.select :month, ["--", "1", "2", "3", "4", "5", "6", "7","8", "9", "10", "11", "12"], { class: "select" ,id:"exp_month",name: "exp_month"}
                 %span 月
-                .birthday-select-wrap{class: "birthday-select-wrap_day"}
+                .year-select-wrap{class: "year-select-wrap_year"}
                   = icon "fas", "angle-down 2x", class: "icon"
-                  = f.select :birthday, ["--", "1", "2", "3", "4", "5", "6", "7"], { class: "select" }
-                %span 日
+                  = f.select :year, ["--", "19", "20", "21", "22", "23", "24", "25"], { class: "select" ,id:"exp_year",name: "exp_year"}
+                %span 年
             .sign-up_main-container_registration-content-form{class: "bottom"}
               = f.label :nickname do
                 セキュリティーコード
               %span{class: "form-require"}必須
-              = f.text_field :nickname, class: "input-default", placeholder: "カード背面4桁もしくは3桁の番号"
+              = f.text_field :nickname, class: "input-default", placeholder: "カード背面4桁もしくは3桁の番号",id: "payment_card_cvc",name:"cvc"
             .sign-up_main-container_registration-content-form
               %p
                 = link_to "", class: "form-text-blue" do
                   = icon "fas", "question-circle"
                   カード裏面の番号とは？
             .sign-up_main-container_registration-content-form
-              = f.submit "次へ進む", class: "submit-btn"
+              = f.submit "次へ進む", class: "submit-btn",id: "token_submit"
   = render "shared/logofooter"
