@@ -68,7 +68,6 @@ $(function() {
   $('.detail-box-wrapper').on("change","#category_child-id", function(){
     // 空の変数用意
     var childId = $("#category_child-id option:selected").data("category");
-    console.log("ok")
     if (childId !== "--" ){
       $.ajax({
       url: '/products/get_category_grandchildren',

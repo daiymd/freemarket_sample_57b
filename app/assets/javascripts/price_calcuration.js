@@ -1,7 +1,6 @@
 $(function() {
   $('.input_price').on("keyup",function(){
     var inputPrice = $(this).val();
-    console.log(inputPrice)
     if (inputPrice >= 300 && inputPrice <= 9999999) {
       var commission =  Math.floor(inputPrice * 0.1);
       var calculated_commission =  Math.floor(inputPrice * 0.1).toLocaleString();
