@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
   
-  
   def index
   end
 
@@ -9,14 +8,12 @@ class ProductsController < ApplicationController
   end
 
   def new
-    
     @product = Product.new
     @product.images.build
     @category_parent_array = ["--"]
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
     end
-    
   end
 
   def get_category_children
@@ -27,12 +24,10 @@ class ProductsController < ApplicationController
   end
 
   def get_category_grandchildren
-   
     @category_grandchildren = Category.find("#{params[:child_id]}").children
     respond_to do |format|
       format.json 
     end
-   
   end
 
   def create
@@ -58,3 +53,4 @@ class ProductsController < ApplicationController
   end
 
 end
+  
