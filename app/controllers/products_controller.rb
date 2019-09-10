@@ -31,7 +31,6 @@ class ProductsController < ApplicationController
   end
 
   def create
-
     @product = Product.new(product_params)    
     respond_to do |format|
       if @product.save 
