@@ -5,11 +5,20 @@ Rails.application.routes.draw do
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations' }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # root "users#show"
+  # get 'products/new'
+  resources :products,only:[:index, :new, :show,:create] do
+    collection  do
+        get 'get_category_children'
+        get 'get_category_grandchildren'
+    end
+  end
   root 'products#index'
   get 'users/:name', controller: 'users', action: 'edit'
-  get 'products/:name', controller: 'products', action: 'show'
+  # get 'products/:name', controller: 'products', action: 'show'
+
+    
   resources :users, only: [:show] 
-  resources :products,only:[:index, :new, :show] 
   resources :payments, only: [:new, :show] do
     collection do
       post 'show', to: 'payments#show'
@@ -26,8 +35,6 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :products,only:[:index, :new, :show]
-  
   resources :signup,only: [:create] do
     collection do
       get 'member'
@@ -38,3 +45,4 @@ Rails.application.routes.draw do
     end
   end
 end
+

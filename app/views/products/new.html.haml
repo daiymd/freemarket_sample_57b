@@ -4,41 +4,51 @@
     .contents__main_block
       .contents__main_block-text 商品の情報を入力
       .contents__main_block_form
-        = form_with url: "users/new", method: :get, local: true do |f|
+        = form_with model: @product, local: true do |f|
           .contents__main_block_form-image
             .contents__main_block_form-image_upload
               .contents__main_block_form-image_upload-text 出品画像
               .focus 必須
-            %p 最大１０枚までアップロードできます
-            .contents__main_block_form-image_images
-              = icon 'fas', 'camera', class: 'icon'
-              .contents__main_block_form-image_images-text ドラッグアンドドロップまたはクリックしてファイルをアップロード
-              = file_field_tag :image, class: 'images', multiple: true
+            = f.fields_for :images do |image|
+              .dropzone-container
+                #preview
+                .dropzone-area
+                  = image.label :image, class: "dropzone-box", for: "upload-image" do
+                    .input_area
+                      = image.file_field :image, multiple: true, id: "upload-image", name: 'images[image][]',class: "upload-image", 'data-image': 0
+                      %pre ドラッグ&ドロップ またはクリックしてファイルをアップロード
+                #preview2
+                .dropzone-area2
+                  = image.label :image, class: "dropzone-box", for: "upload-image" do
+                    .input_area
+                      = image.file_field :image, multiple: true, id: "upload-image", name: 'images[image][]', class: "upload-image", 'data-image': 0
+                      %pre ここをクリックしてください
           .contents__main_block_form-name
             .product_name
               .product_name-text 商品名
               .focus 必須
             .product_name-form
-              = text_field_tag "name", "" ,class: 'input_name', placeholder: "商品名（必須 40文字まで)"
+              = f.text_field :name  ,class: 'input_name', placeholder: "商品名（必須 40文字まで)"
             .product_description
               .product_description-text 商品の説明
               .focus 必須
             .product_description-form
-              = text_area_tag "name", "" , class: 'input_description', rows: "5", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+              = f.text_area :name, class: 'input_description', rows: "5", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
           .contents__main_block_form-detail
             .text 商品の詳細
             .detail_box
-              .detail_box-category
-                .detail_box-category-text カテゴリー
-                .focus 必須
-              .selects
-                = select "category", "", ["--", "レディース", "メンズ", "ベビー・キッズ", "インテリア・住まい・小物", "本・音楽・ゲーム", "おもちゃ・ホビー・グッズ", "コスメ・香水・美容", "家電・スマホ・カメラ", "スポーツ・レジャー", "ハンドメイド", "チケット", "自動車・オートバイ", "その他"], {} ,{class: "selection"}
-                = icon "fas", "angle-down 2x", class: 'down'
+              .detail-box-wrapper
+                .detail_box-category
+                  .detail_box-category-text カテゴリー
+                  .focus 必須
+                .selects
+                  = f.select :category_id, @category_parent_array, {}, {class: "selection", id:"category_id"}
+                  = icon "fas", "angle-down 2x", class: 'down'
               .detail_box-state
                 .detail_box-state-text 商品の状態
                 .focus 必須
               .selects
-                = select "state", "", ["--", "レディース", "メンズ", "ベビー・キッズ", "インテリア・住まい・小物", "本・音楽・ゲーム", "おもちゃ・ホビー・グッズ", "コスメ・香水・美容", "家電・スマホ・カメラ", "スポーツ・レジャー", "ハンドメイド", "チケット", "自動車・オートバイ", "その他"], {} ,{class: "selection"}
+                = f.select :status, ["--", "新品、未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり", "全体的に状態が悪い"], {}, {class: "selection"}
                 = icon "fas", "angle-down 2x", class: 'down'
           .contents__main_block_form-about
             .text 配送について
@@ -49,19 +59,26 @@
                 .about_box-burden-text 配送料の負担
                 .focus 必須
               .selects
-                = select "burden", "", ["--", "送料込み(出品者負担)", "着払い(購入者負担)"], {} ,{class: "selection"}    
+                = f.select :delivery_price, ["--", "送料込み(出品者負担)", "着払い(購入者負担)"],{},{class: "selection", id:"delivery_charge"}
                 = icon "fas", "angle-down 2x", class: 'down'
+              .right-box
+                .about_box-way
+                  .about_box-way-text 配送の方法
+                  .focus 必須
+                .selects
+                  = f.select :delivery_way,[ "--" ],{},{class: "selection",id:"delivery_way"}
+                  = icon "fas", "angle-down 2x", class: 'down'
               .about_box-region
                 .about_box-region-text 発送元の地域
                 .focus 必須
               .selects 
-                = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {class: "identification-input"}
+                = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {}, {class: "identification-input", id:"prefecture"}
                 = icon "fas", "angle-down 2x", class: 'down'
               .about_box-day 
                 .about_box-day-text 発送までの日数
                 .focus 必須
               .selects
-                = select "day", "", ["--", "1~2日で発送", "2~3日で発送", "4~7日で発送"], {} ,{class: "selection"}    
+                = f.select :scheduled, ["--", "1~2日で発送", "2~3日で発送", "4~7日で発送"], {} ,{class: "selection", id:"day"}    
                 = icon "fas", "angle-down 2x", class: 'down'
           .contents__main_block_form-price
             .text 販売価格(300〜9,999,999)
@@ -75,7 +92,7 @@
                 .right
                   .right-text ¥  
                   .right-form
-                    = text_field_tag "price", "" ,class: 'input_price', placeholder: "例）300"
+                    = f.text_field :price, class: 'input_price', placeholder: "例）300"
               .price_box-fee
                 .left 販売手数料 (10%)
                 .right -
@@ -100,7 +117,7 @@
               = link_to "" do
                 加盟店規約
               に同意したことになります。
-            %button.confirm 出品する
+              = f.submit  class:"confirm", value:"出品する"
             %button.back 戻る           
 
   =render "shared/logofooter"
