@@ -31,7 +31,11 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_params)    
+    # @category = Category.find(name: "#{params[:category_id]}".last)
+    @category = Category.find_by(name: params[:category])
+    @product = Product.new(product_params) 
+    @product.category_id = @category.id
+    # binding.pry  
     respond_to do |format|
       if @product.save 
         params[:images][:image].each do |image|
@@ -48,8 +52,7 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :price, :status, :delivery_price, :delivery_way, :scheduled, images_attributes:  [:image])
-    
+    params.require(:product).permit(:name, :text, :prefecture, :price, :status, :delivery_price, :delivery_way, :scheduled, images_attributes:  [:image])
   end
 
 end

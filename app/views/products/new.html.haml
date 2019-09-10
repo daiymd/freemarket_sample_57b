@@ -33,7 +33,7 @@
               .product_description-text 商品の説明
               .focus 必須
             .product_description-form
-              = f.text_area :name, class: 'input_description', rows: "5", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+              = f.text_area :text, class: 'input_description', rows: "5", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
           .contents__main_block_form-detail
             .text 商品の詳細
             .detail_box
@@ -72,7 +72,7 @@
                 .about_box-region-text 発送元の地域
                 .focus 必須
               .selects 
-                = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {}, {class: "identification-input", id:"prefecture"}
+                = f.collection_select :prefecture, Prefecture.all, :id, :name, {}, {class: "identification-input", id:"prefecture"}
                 = icon "fas", "angle-down 2x", class: 'down'
               .about_box-day 
                 .about_box-day-text 発送までの日数

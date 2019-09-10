@@ -1,4 +1,4 @@
-ladies, mens = Category.create([{name: "レディース"}, {name: "メンズ"}])
+ladies, mens = Category.create([{name: "レディース", id: "1"}, {name: "メンズ"}])
 
 tops, pants = ladies.children.create([{name: "トップス"}, {name: "パンツ"}])
 tops.children.create([{name: "シャツ"}, {name: "キャミソール"}])
