@@ -4,6 +4,7 @@ class PaymentsController < ApplicationController
 
 
   def new
+    @user = User.find(current_user.id)
     card = Payment.where(user_id: current_user.id)
   end
 

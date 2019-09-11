@@ -56,6 +56,8 @@ class SignupController < ApplicationController
     )
     if @user.save 
       session[:id] = @user.id
+      @user.seller_id = @user.id
+      @user.buyer_id = @user.id
       @address.update(user_id:  @user.id)
       SnsCredential.update(user_id:  @user.id)
       if @address.save

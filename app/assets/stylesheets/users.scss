@@ -89,6 +89,7 @@ ul {
     // お知らせ等のタブ
     .wrapper__mypage__container__info {
       background-color: white;
+      margin-bottom: 40px;
       &__tabs {
         display: flex;
         background: #eee;
@@ -215,7 +216,7 @@ ul {
     }
     // 購入した商品の見だし
       .wrapper__mypage__container__purchased{
-        margin: 40px 0;
+        @include clearfix();
         background: #fff;
         &__head {
           font-weight: bold;
@@ -276,6 +277,48 @@ ul {
             text-align: center;
             color: #ccc;
             font-weight: bold;
+          }
+        }
+        &__exhibiting {
+          height: 72px;
+          padding: 10px;
+          display: flex;
+          &-image {
+            float: left;
+            margin-right: 20px;
+          }
+          &-product {
+            float: left;
+            display: flex;
+            flex-direction: column;
+            &-top {
+              margin-bottom: 5px;
+            }
+            &-bottom {
+              display: flex;
+              &-like {
+                margin-right: 10px;
+              }
+              &-comment {
+                margin-right: 10px;
+              }
+              &-exhibiting {
+                color: #fff;
+                background-color: rgb(48, 169, 224);
+                line-height: 24px;
+                letter-spacing: 1px;
+                text-align: center;
+                border: none;
+                border-radius: 3px;
+                height: 24px;
+                font-size: 12px;
+                width: 60px;
+              }
+            }
+          }
+          &-icon {
+            margin-left: auto;
+            line-height: 60px;
           }
         }
       }
