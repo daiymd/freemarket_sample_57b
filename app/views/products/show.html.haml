@@ -3,20 +3,22 @@
 
 .item
   .item__show
-    .item__show_name その辺で拾った石
+    .item__show_name 
+      = @product.name
     .item__show_main
       .item__show_main-photo
-        = image_tag "https://pbs.twimg.com/profile_images/3739834369/6fe32912d31e1c7f806268247ae313ff_400x400.jpeg", size: "280x280"
+        = image_tag @image.image.url, size: "280x280"
       %table.item__show_main-table
         %tbody
           %tr
-            %th 出品者
+            %th 
+              出品者
             %td
               = link_to "", class: "link_blue" do
-                ⭐️
+                = @seller.nickname
               .ratebox
                 .ratings
-                  = icon "fas",'smile',class: ""
+                  = icon "fas",'smile',class: "smile"
                   %span (^^)
                 .ratings
                   = icon "fas", 'meh',class: "meh"
@@ -28,33 +30,41 @@
             %th カテゴリー
             %td.category
               = link_to "", class: "link_blue" do
-                %div 石
+                %div 
+                = ">#{@category.parent.parent.name}"
               = link_to "", class: "link_blue" do
-                %div > その辺に落ちてる
+                %div 
+                = ">#{@category.parent.name}"
               = link_to "", class: "link_blue" do
-                %div > 石  
+                %div 
+                = ">#{@category.name}"
           %tr
             %th ブランド
             %td 
           %tr
             %th 商品の状態
-            %td 新品、未使用
+            %td 
+              = @product.status
           %tr
             %th 配送料の負担
-            %td 送料込み(出品者負担)
+            %td
+              = @product.delivery_price
           %tr
             %th 配送の方法
-            %td 未定
+            %td 
+              = @product.delivery_way
           %tr
             %th 配送元地域
             %td
               = link_to "", class: "link_blue" do
-                川
+                = @product.prefecture
           %tr
             %th 発送日の目安
-            %td 1~2年で発送
+            %td
+              = @product.scheduled
     .item__show_price
-      %span.price ¥10
+      %span.price 
+        = @product.price
       %span.tax (税込)
       %span.fee 送料込み
     .item__show_btn
@@ -62,9 +72,7 @@
         購入画面に進む
     .item__show_text
       %p.text
-        即買いok  (o^^o)
-        川で拾ったお👱‍ε=ε=ε=ε=ε=ε=┌(;￣◇￣)┘
-        ＼＼\\٩( 'ω' )و //／／
+        = @product.text
     .item__show_rate
       .left
         %button.left_button
@@ -86,6 +94,9 @@
         = text_area_tag "text"
         %button
           %span コメントする
+  - if current_user.id == @seller.id
+    = link_to edit_product_path do
+      %button.btn 商品の編集
   %ul.next
     %li.link-preview
       = link_to "", class: "link_blue" do
@@ -114,7 +125,7 @@
     %section
       .box-head
         = link_to "", class: "link_blue" do
-          💫さんのその他の出品
+          = "#{@seller.nickname}さんのその他の出品"
       .items-box
         = render "products"
         = render "products"
@@ -122,7 +133,7 @@
     %section
       .box-head
         = link_to "", class: "link_blue"do
-          石（石）その他の商品
+          = "#{@category.parent.parent.name}(#{@category.name})その他の商品"
       .items-box
         = render "products"
         = render "products"
@@ -134,6 +145,7 @@
           %span メルカリ
         = icon "fas", "arrow-right",class: "arrow-right"  
       %li 
-        %span その辺で拾った石
+        %span
+          = @product.name
 %banner
 = render "users/footer"
