@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # root "users#show"
   # get 'products/new'
-  resources :products,only:[:index, :new, :show,:create] do
+  resources :products do
     collection  do
         get 'get_category_children'
         get 'get_category_grandchildren'

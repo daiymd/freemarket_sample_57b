@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :set_product, only: [:edit, :update, :destroy]
   
   def index
   end
@@ -31,11 +32,9 @@ class ProductsController < ApplicationController
   end
 
   def create
-    # @category = Category.find(name: "#{params[:category_id]}".last)
     @category = Category.find_by(name: params[:category])
     @product = Product.new(product_params) 
     @product.category_id = @category.id
-    # binding.pry  
     respond_to do |format|
       if @product.save 
         params[:images][:image].each do |image|
@@ -50,9 +49,22 @@ class ProductsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+  end
+
   private
   def product_params
     params.require(:product).permit(:name, :text, :prefecture, :price, :status, :delivery_price, :delivery_way, :scheduled, images_attributes:  [:image])
+  end
+
+  def set_product
+   @product = Product.find(params[:id])
   end
 
 end
