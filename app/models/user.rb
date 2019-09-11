@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable,omniauth_providers: [:facebook, :google_oauth2]
-  # has_many :products, through: :transaction
-  # has_many :transactions
+  has_many :products, through: :transactions
+  has_many :transactions
   has_many :comments
   has_many :likes
   has_one :street_address

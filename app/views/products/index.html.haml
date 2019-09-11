@@ -11,10 +11,8 @@
           = link_to "" , class: "link_blue" do
             全ての商品
         .products_contain_item
-          = render "products"
-          = render "products"
-          = render "products"
-          = render "products"
+          = render "products" , collection: @products
+          -# = render "products"
         .products_contain_view
           = link_to "", class: "link_blue" do
             全ての商品を見る
