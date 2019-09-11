@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(current_user.id)
     render "users/#{params[:name]}"
     # , locals: {user: current_user }
   end

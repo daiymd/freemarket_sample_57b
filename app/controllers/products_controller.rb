@@ -43,7 +43,8 @@ class ProductsController < ApplicationController
         params[:images][:image].each do |image|
             @product.images.create(image: image, product_id: @product.id)
           end
-          @product.transactions.create(product_id: @product.id, seller_id: current_user.id)
+          @transaction = Transaction.new(product_id: @product.id, seller_id: current_user.id)
+          @transaction.save
         format.html{redirect_to products_path}
       else
         @product.images.build
