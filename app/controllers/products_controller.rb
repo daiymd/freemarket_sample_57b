@@ -5,7 +5,8 @@ class ProductsController < ApplicationController
   end
 
   def show
-    render "products/#{params[:name]}"
+    # render "products/#{params[:name]}"
+    @product = Product.find(params[:id])
   end
 
   def new
