@@ -2,13 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:edit, :update, :destroy, :show]
   
   def index
-    # @images= Image.includes(:transaction).where.seller_id(buyer_id: nil).select("image")
-    # @products = Product.includes(:transaction).where.seller_id(buyer_id: nil).select("name","price")
-    # Image.includes(:transaction).where.seller_id(buyer_id: nil).select("image").each do |image|
-    #   @index_views << image.image
     @products = Product.all.includes(:images).order("created_at DESC")
-    # binding.pry
-    # @images = Image.where()
   end
 
   def show
