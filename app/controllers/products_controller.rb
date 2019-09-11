@@ -66,7 +66,7 @@ class ProductsController < ApplicationController
       params[:images][:image].each do |image|
         @product.images.update(image: image, product_id: @product.id)
       end
-      redirect_to products_path
+      redirect_to product_path(@product[:id])
     else
       render :edit
   end

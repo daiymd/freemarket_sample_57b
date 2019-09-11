@@ -95,8 +95,9 @@
         %button
           %span コメントする
   - if current_user.id == @seller.id
-    = link_to edit_product_path do
-      %button.btn 商品の編集
+    .user_editbox
+      = link_to edit_product_path do
+        %button.btn-default 商品の編集
   %ul.next
     %li.link-preview
       = link_to "", class: "link_blue" do
