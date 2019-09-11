@@ -16,21 +16,25 @@
                   = image.label :image, class: "dropzone-box", for: "upload-image" do
                     .input_area
                       = image.file_field :image, multiple: true, id: "upload-image", name: 'images[image][]',class: "upload-image", 'data-image': 0
+                      = image.hidden_field :image
                       %pre ドラッグ&ドロップ またはクリックしてファイルをアップロード
                 #preview2
                 .dropzone-area2
                   = image.label :image, class: "dropzone-box", for: "upload-image" do
                     .input_area
                       = image.file_field :image, multiple: true, id: "upload-image", name: 'images[image][]', class: "upload-image", 'data-image': 0
+                      = image.hidden_field :image
                       %pre ここをクリックしてください
           .contents__main_block_form-name
             .product_name
-              .product_name-text 商品名
+              .product_name-text
+                = @product.name
               .focus 必須
             .product_name-form
               = f.text_field :name  ,class: 'input_name', placeholder: "商品名（必須 40文字まで)"
             .product_description
-              .product_description-text 商品の説明
+              .product_description-text
+                = @product.text
               .focus 必須
             .product_description-form
               = f.text_area :text, class: 'input_description', rows: "5", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
@@ -45,10 +49,11 @@
                   = f.select :category_id, @category_parent_array, {}, {class: "selection", id:"category_id"}
                   = icon "fas", "angle-down 2x", class: 'down'
               .detail_box-state
-                .detail_box-state-text 商品の状態
+                .detail_box-state-text
+                  = @product.status
                 .focus 必須
               .selects
-                = f.select :status, Product.statuses.keys, {}, {class: "selection"}
+                = f.select :status, ["--", "新品、未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり", "全体的に状態が悪い"], {}, {class: "selection"}
                 = icon "fas", "angle-down 2x", class: 'down'
           .contents__main_block_form-about
             .text 配送について
@@ -117,7 +122,7 @@
               = link_to "" do
                 加盟店規約
               に同意したことになります。
-              = f.submit  class:"confirm", value:"出品する"
+              = f.submit  class:"confirm", value:"変更する"
             %button.back 戻る           
 
   =render "shared/logofooter"

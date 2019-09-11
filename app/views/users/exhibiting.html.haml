@@ -1,0 +1,48 @@
+.wrapper
+  = render "header"
+  .wrapper__breadcrumb
+    - breadcrumb :mypage
+    = breadcrumbs pretext: "",separator: " &rsaquo; ", class: "breadcrumbs-list"
+  .wrapper__mypage
+    .wrapper__mypage__container
+      %section.wrapper__mypage__container__purchased
+        %h2.wrapper__mypage__container__purchased__head
+          出品した商品
+        %ul.wrapper__mypage__container__purchased__tabs
+          %li.active-tab
+            %h3
+              = link_to '出品中', id: "mypage-tab-transaction-now"
+          %li.non-active-tab
+            %h3
+              = link_to '取引中', id: "mypage-tab-transaction-past"
+          %li.non-active-tab
+            %h3
+              = link_to '売却済み', id: "mypage-tab-transaction-past"
+              -# ifで条件分岐する
+        .wrapper__mypage__container__purchased__transaction
+          %figure.wrapper__mypage__container__purchased__transaction__pane
+            = image_tag "https://www.mercari.com/jp/assets/img/common/common/logo-gray-icon.svg?29550023", alt: "画像"
+          %h3.wrapper__mypage__container__purchased__transaction__not-found
+            取引中の商品がありません 
+            -# 出品した商品。eachで回す
+        = link_to "" do
+          .wrapper__mypage__container__purchased__exhibiting
+            .wrapper__mypage__container__purchased__exhibiting-image
+              =image_tag "http://design-ec.com/d/e_others_50/l_e_others_501.png", width: "50", height: "50"
+            .wrapper__mypage__container__purchased__exhibiting-product
+              .wrapper__mypage__container__purchased__exhibiting-product-top
+                test
+              .wrapper__mypage__container__purchased__exhibiting-product-bottom
+                .wrapper__mypage__container__purchased__exhibiting-product-bottom-like
+                  = icon  "fas",'heart', class: "icon-grey"
+                  0
+                .wrapper__mypage__container__purchased__exhibiting-product-bottom-comment
+                  = icon  "fas",'comment', class: "icon-grey"
+                  0
+                .wrapper__mypage__container__purchased__exhibiting-product-bottom-exhibiting
+                  出品中
+            .wrapper__mypage__container__purchased__exhibiting-icon
+              = icon "fas", "angle-right"
+    =render "sidebar"
+  = render "footer"
+  = render "exhibit"

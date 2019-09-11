@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
-  has_many :users, through: :transaction
+
   has_many :transactions
+  has_many :users, through: :transactions
   has_many :comments
   has_many :likes
   has_one :street_address
@@ -8,7 +9,7 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :images
   belongs_to :category
 
-  enum product_details: {
-    "--":0, "レディース":1, "メンズ":2, "トップス":3, "パンツ":4, "シャツ":5, "キャミソール":6, "チノパン":7, "ジーンズ":8, "パンツ":9, "時計":10, "腕時計":11, "レザーベルト":12, "スラックス":13, "ショートパンツ":14
-  },_prefix:true
+  enum status: {
+    "--":0, "新品、未使用":1, "未使用に近い":2, "目立った傷や汚れなし":3, "やや傷や汚れあり":4, "傷や汚れあり":5, "全体的に状態が悪い":6
+  }
 end

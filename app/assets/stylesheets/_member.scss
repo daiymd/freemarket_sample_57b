@@ -101,8 +101,8 @@ body {
             text-decoration: none;
             margin-bottom: 20px; 
           }
-          .month-select {
-            .month-select-wrap {
+          .birthday-select {
+            .birthday-select-wrap {
               display: inline-block;
               width: 76px;
               margin: 8px 0 0;
@@ -134,8 +134,8 @@ body {
               }
             }
           }
-          .month-select {
-            .year-select-wrap {
+          .birthday-select {
+            .birthday-select-wrap {
               display: inline-block;
               width: 76px;
               margin: 8px 0 0;
@@ -151,7 +151,6 @@ body {
                 transform: translate(0, -50%);
               }
               // セレクトのボタンを消す
-              #year {
               .select {
                 -webkit-appearance:none;
                 padding: 0 10px;
@@ -189,7 +188,5 @@ body {
         }
       }
     }
-  }
-
   }
 }
