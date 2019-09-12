@@ -100,6 +100,9 @@
     .user_editbox
       = link_to edit_product_path do
         %button.btn-default 商品の編集
+    .user_editbox
+      = link_to product_path, method: :delete do
+        %button.btn-default 商品の削除
   %ul.next
     %li.link-preview
       = link_to "", class: "link_blue" do

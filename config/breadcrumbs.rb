@@ -25,6 +25,7 @@ crumb :logout do
   link "ログアウト", "users/logout"
   parent :mypage
 end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end

@@ -1,7 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:edit, :update, :destroy, :show]
   before_action :move_to_index, except: [:index, :show]
-
   def index
     @products = []
     @products1 = Product.all.includes(:images).order("created_at DESC")
@@ -85,6 +84,11 @@ class ProductsController < ApplicationController
 end
 
   def destroy
+    transaction = Transaction.find(params[:id])
+    if user_signed_in? && transaction.seller_id == current_user.id
+      @product.delete
+    end
+    redirect_to root_path
   end
 
   private

@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     collection  do
         get 'get_category_children'
         get 'get_category_grandchildren'
-    end
+      end
   end
   root 'products#index'
   get 'users/:name', controller: 'users', action: 'edit'
