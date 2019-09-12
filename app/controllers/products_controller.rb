@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
     @seller = User.find(@product.transactions[0]["seller_id"])
     @category = Category.find(@product.category_id)
     @image = @product.images[0]
+    @products = Product.all.includes(:images).order("created_at DESC")
   end
 
   def new
@@ -87,7 +88,7 @@ end
   end
 
   def set_product
-   @product = Product.find(params[:id])
+    @product = Product.find(params[:id])
   end
 
 end

@@ -6,21 +6,22 @@
     .purchase-products
       .purchase-products__inner
         .purchase-products__image
-          = image_tag src= "https://static.mercdn.net/thumb/photos/m21694605444_1.jpg?1565745931" ,width: "64", height: "52.97"
+          = image_tag @image.image.url, width: "64", height: "52.97"
         .purchase-products__name.bold
-          28cm NIKE LD waffle Sacai
+          = @product.name
         .purchase-products__box
           .purchase-products__price.bold
-            ¥ 61,500
+            = "¥ #{@product.price}"
             %span.purchase-products__shipping-fee
               送料込み
           .purchase-products__toggle
             ポイントはありません
           .purchase-products__cell
             支払い金額
-            %span.purchase-products__price-cell ¥ 61,500
+            %span.purchase-products__price-cell 
+              = "¥ #{@product.price}"
           .purchase-products__btn
-            = form_with url: pay_purchase_index_path, action: :pay, method: :post,class: :buy do
+            = form_with url: pay_product_purchase_index_path, action: :pay, method: :post,class: :buy do
               %button.btn-default.btn-red 購入する 
     .purchase-user-info
       .purchase-user-info__delivery 配送先

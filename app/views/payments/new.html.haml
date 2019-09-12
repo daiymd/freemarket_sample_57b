@@ -20,12 +20,12 @@
               = f.label :nickname do
                 有効期限
               %span{class: "form-require"}必須
-              .month-select
-                .month-select-wrap{class: "month-select-wrap_month"}
+              .birthday-select
+                .birthday-select-wrap{class: "birthday-select-wrap_month"}
                   = icon "fas", "angle-down 2x", class: "icon"
                   = f.select :month, ["--", "1", "2", "3", "4", "5", "6", "7","8", "9", "10", "11", "12"], { class: "select" ,id:"exp_month"}
                 %span 月
-                .year-select-wrap{class: "year-select-wrap_year"}
+                .birthday-select-wrap{class: "birthday-select-wrap_year"}
                   = icon "fas", "angle-down 2x", class: "icon"
                   = f.select :year, ["--", "2019", "2020", "2021", "2022", "2023", "2024", "2025"], { class: "select" ,id:"exp_year"}
                 %span 年
