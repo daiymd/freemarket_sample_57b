@@ -98,6 +98,9 @@
     .user_editbox
       = link_to edit_product_path do
         %button.btn-default 商品の編集
+    .user_editbox
+      = link_to "/products/#{@product.id}", method: :delete do
+        %button.btn-default 商品の削除
   %ul.next
     %li.link-preview
       = link_to "", class: "link_blue" do
@@ -128,17 +131,11 @@
         = link_to "", class: "link_blue" do
           = "#{@seller.nickname}さんのその他の出品"
       .items-box
-        = render "products"
-        = render "products"
-        = render "products"
     %section
       .box-head
         = link_to "", class: "link_blue"do
           = "#{@category.parent.parent.name}(#{@category.name})その他の商品"
-      .items-box
-        = render "products"
-        = render "products"
-        = render "products"    
+      .items-box   
   %nav.bottom
     %ul
       %li

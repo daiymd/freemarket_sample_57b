@@ -75,6 +75,8 @@ class ProductsController < ApplicationController
 end
 
   def destroy
+    @product.delete
+    redirect_to root_path
   end
 
   private
@@ -87,7 +89,7 @@ end
   end
 
   def set_product
-   @product = Product.find(params[:id])
+    @product = Product.find(params[:id])
   end
 
 end
