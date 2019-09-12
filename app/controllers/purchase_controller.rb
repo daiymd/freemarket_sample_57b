@@ -1,5 +1,5 @@
 class PurchaseController < ApplicationController
-  before_action :set_product, only: [:index, :done]
+  before_action :set_product, only: [:index, :done, :pay]
   require 'payjp'
 
   def index
@@ -18,7 +18,7 @@ class PurchaseController < ApplicationController
     card = Payment.where(user_id: current_user.id).first
     Payjp.api_key = Rails.application.credentials.payjp[:payjp_private_key]
     Payjp::Charge.create(
-    amount: 61500, 
+    amount: @product.price, 
     customer: card.customer_id, 
     currency: 'jpy', 
   )

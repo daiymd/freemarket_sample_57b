@@ -68,9 +68,10 @@
       %span.tax (税込)
       %span.fee 送料込み
 
-    .item__show_btn
-      = link_to product_purchase_index_path(@product) do
-        購入画面に進む
+    - unless user_signed_in? && current_user.id == @seller.id
+      .item__show_btn
+        = link_to product_purchase_index_path(@product) do
+          購入画面に進む
     .item__show_text
       %p.text
         = @product.text
@@ -95,7 +96,7 @@
         = text_area_tag "text"
         %button
           %span コメントする
-  - if current_user.id == @seller.id
+  - if user_signed_in?
     .user_editbox
       = link_to edit_product_path do
         %button.btn-default 商品の編集

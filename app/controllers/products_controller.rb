@@ -1,15 +1,24 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:edit, :update, :destroy, :show]
-  
+  before_action :move_to_index, except: [:index, :show]
+
   def index
-    @products = Product.all.includes(:images).order("created_at DESC")
+    @products = []
+    @products1 = Product.all.includes(:images).order("created_at DESC")
+    @products1.each do |product|
+      if product.transactions[0].buyer_id == nil
+        @products << product
+      end
+    end
+      
   end
 
   def show
     @seller = User.find(@product.transactions[0]["seller_id"])
+    @transaction = Transaction.find_by(product_id: @product.id)
     @category = Category.find(@product.category_id)
     @image = @product.images[0]
-    @products = Product.all.includes(:images).order("created_at DESC")
+    # @products = Product.all.includes(:images).order("created_at DESC")
   end
 
   def new
@@ -91,5 +100,7 @@ end
     @product = Product.find(params[:id])
   end
 
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
+  end
 end
-  
