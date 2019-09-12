@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get 'users/profile', to: 'users#edit', as: :profile
   get 'users/logout', to: 'users#edit', as: :logout
   get 'users/show', to: 'users#edit', as: :show
+  get 'users/signup', to: 'users#edit', as: :signup
 
     
   resources :users, only: [:show] 
