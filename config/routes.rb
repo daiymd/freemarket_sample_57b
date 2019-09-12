@@ -9,11 +9,9 @@ Rails.application.routes.draw do
     collection  do
         get 'get_category_children'
         get 'get_category_grandchildren'
-        # get 'destroy'
-    end
+      end
   end
   root 'products#index'
-  # get 'products/destroy', to:'products#destroy', as: :destroy
   get 'users/:name', controller: 'users', action: 'edit'
   get 'users/identification', to: 'users#edit', as: :identification
   get 'users/exhibiting', to: 'users#edit', as: :exhibiting

@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:edit, :update, :destroy, :show]
-  
+  # rescue_from ActiveRecord::RecordNotFound, with: :render_404 unless Rails.env.development?
   def index
     @products = Product.all.includes(:images).order("created_at DESC")
   end
@@ -75,7 +75,10 @@ class ProductsController < ApplicationController
 end
 
   def destroy
-    @product.delete
+    transaction = Transaction.find(params[:id])
+    if user_signed_in? && transaction.seller_id == current_user.id
+      @product.delete
+    end
     redirect_to root_path
   end
 
