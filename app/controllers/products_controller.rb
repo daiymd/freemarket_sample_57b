@@ -68,15 +68,22 @@ class ProductsController < ApplicationController
     Category.where(ancestry: nil).each do |parent|
     @category_parent_array << parent.name    
     end
+    @product.images[0].image.cache! unless  @product.images[0].image.blank?
   end
 
   def update
     @category = Category.find_by(name: params[:category])
     if @product.update(product_params2)
       @product.category_id = @category.id
+      if params[:images][:image]
       params[:images][:image].each do |image|
         @product.images.update(image: image, product_id: @product.id)
       end
+    else
+      params[:images][:default].each do |image|
+        @product.images.update(image: image, product_id: @product.id)
+    end
+  end
       redirect_to product_path(@product[:id])
     else
       render :edit
@@ -97,7 +104,7 @@ end
   end
 
   def product_params2
-    params.require(:product).permit(:name, :text, :prefecture, :price, :status, :delivery_price, :delivery_way, :scheduled,)
+    params.require(:product).permit(:name, :text, :prefecture, :price, :status, :delivery_price, :delivery_way, :scheduled, :image_cache)
   end
 
   def set_product

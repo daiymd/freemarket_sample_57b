@@ -16,7 +16,7 @@
                   = image.label :image, class: "dropzone-box", for: "upload-image" do
                     .input_area
                       = image.file_field :image, multiple: true, id: "upload-image", name: 'images[image][]',class: "upload-image", 'data-image': 0
-                      = image.hidden_field :image
+                      = image.hidden_field :image_cache, name: 'images[default][]'
                       %pre ドラッグ&ドロップ またはクリックしてファイルをアップロード
                 #preview2
                 .dropzone-area2
