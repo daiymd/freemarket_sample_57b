@@ -5,13 +5,13 @@
       購入が完了しました!
     .purchase-products
       .purchase-products__image
-        = image_tag src= "https://static.mercdn.net/thumb/photos/m21694605444_1.jpg?1565745931" ,width: "150", height: "150"
+        = image_tag @image.image.url, width: "150", height: "150"
       .purchase-products__inner
       .purchase-product-name.bold
-        28cm NIKE LD waffle Sacai
+        = @product.name
       .purchase-user-info  
         .purchase-products__price.bold
-          ¥61,500
+          = "¥ #{@product.price}"
           %span.purchase-products__shipping-fee
             送料込み
     .purchase-user-info
