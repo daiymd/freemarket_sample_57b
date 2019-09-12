@@ -67,8 +67,9 @@
         = @product.price
       %span.tax (税込)
       %span.fee 送料込み
+
     .item__show_btn
-      = link_to "" do
+      = link_to product_purchase_index_path(@product) do
         購入画面に進む
     .item__show_text
       %p.text
@@ -131,11 +132,13 @@
         = link_to "", class: "link_blue" do
           = "#{@seller.nickname}さんのその他の出品"
       .items-box
+        = render "products"
     %section
       .box-head
         = link_to "", class: "link_blue"do
           = "#{@category.parent.parent.name}(#{@category.name})その他の商品"
-      .items-box   
+      .items-box
+        = render "products"
   %nav.bottom
     %ul
       %li

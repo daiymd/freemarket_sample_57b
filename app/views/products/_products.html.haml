@@ -1,6 +1,6 @@
 -@products.each do |product|
   .products_contain_item-box
-    = link_to "", class: "link" do
+    = link_to product_path(product), class: "link" do
       .products_contain_item-box-image
         = image_tag product.images[0].image.url
       .products_contain_item-box-body
