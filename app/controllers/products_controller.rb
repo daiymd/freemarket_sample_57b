@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
     @transaction = Transaction.find_by(product_id: @product.id)
     @category = Category.find(@product.category_id)
     @image = @product.images[0]
-    # @products = Product.all.includes(:images).order("created_at DESC")
+    @products = Product.all.includes(:images).order("created_at DESC")
   end
 
   def new
