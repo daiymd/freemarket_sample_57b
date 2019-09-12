@@ -96,7 +96,7 @@
         = text_area_tag "text"
         %button
           %span コメントする
-  - if user_signed_in?
+  - if user_signed_in? && current_user.id == @seller.id
     .user_editbox
       = link_to edit_product_path do
         %button.btn-default 商品の編集
