@@ -63,7 +63,6 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @image = @product.images
     @category_parent_array = ["--"]
     Category.where(ancestry: nil).each do |parent|
     @category_parent_array << parent.name    
