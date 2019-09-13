@@ -5,7 +5,7 @@
       .sign-up_main-container-head
         支払い方法
       .sign-up_main-container_registration
-        = form_with  method: :post, id: "#charge-form" ,local:true do |f|
+        = form_with method: :get, id: "#charge-form" ,local:true do |f|
           .sign-up_main-container_registration-content
             .sign-up_main-container_registration-content-form
               = f.label :nickname do
@@ -17,12 +17,12 @@
               = f.label :nickname do
                 有効期限
               %span{class: "form-require"}必須
-              .month-select
-                .month-select-wrap{class: "month-select-wrap_month"}
+              .birthday-select
+                .birthday-select-wrap{class: "birthday-select-wrap_month"}
                   = icon "fas", "angle-down 2x", class: "icon"
                   = f.select :month, ["--", "1", "2", "3", "4", "5", "6", "7","8", "9", "10", "11", "12"], { class: "select" ,id:"exp_month",name: "exp_month"}
                 %span 月
-                .year-select-wrap{class: "year-select-wrap_year"}
+                .birthday-select-wrap{class: "birthday-select-wrap_year"}
                   = icon "fas", "angle-down 2x", class: "icon"
                   = f.select :year, ["--", "19", "20", "21", "22", "23", "24", "25"], { class: "select" ,id:"exp_year",name: "exp_year"}
                 %span 年
