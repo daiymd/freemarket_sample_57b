@@ -68,7 +68,11 @@
       %span.tax (税込)
       %span.fee 送料込み
 
-    - unless user_signed_in? && current_user.id == @seller.id
+    - if @transaction.buyer_id.present?
+      .item__show_btn
+        = link_to "" do
+          売り切れました！！
+    - else
       .item__show_btn
         = link_to product_purchase_index_path(@product) do
           購入画面に進む

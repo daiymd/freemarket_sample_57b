@@ -63,11 +63,16 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @category_parent_array = ["--"]
-    Category.where(ancestry: nil).each do |parent|
-    @category_parent_array << parent.name    
+    @seller = User.find(@product.transactions[0]["seller_id"])
+    if user_signed_in? && current_user.id == @seller.id
+      @category_parent_array = ["--"]
+      Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name    
+      end
+      @product.images[0].image.cache! unless  @product.images[0].image.blank?
+    else
+      redirect_to root_path
     end
-    @product.images[0].image.cache! unless  @product.images[0].image.blank?
   end
 
   def update
