@@ -1,3 +1,4 @@
+$(document).on('turbolinks:load', function() {
 $(function() {
 // 追加されていく箱の用意
   function appendOption(category){
@@ -97,3 +98,4 @@ $(function() {
   }
     });
   });
+});
