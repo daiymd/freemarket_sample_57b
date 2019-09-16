@@ -10,7 +10,6 @@ class Product < ApplicationRecord
   belongs_to :category
 
   with_options presence: true do
-    validates :images
     validates :name
     validates :status
     validates :delivery_price
