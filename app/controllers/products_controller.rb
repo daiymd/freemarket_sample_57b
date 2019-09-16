@@ -50,12 +50,12 @@ class ProductsController < ApplicationController
     end
     @category = Category.find_by(name: params[:category])
     @product = Product.new(product_params) 
-    @product.category_id = @category.id
     respond_to do |format|
       if params[:images].blank?
         @product.images.build
         format.html{render action: 'new'}
       else
+        @product.category_id = @category.id
         @product.save 
         params[:images][:image].each do |image|
             @product.images.create(image: image, product_id: @product.id)
