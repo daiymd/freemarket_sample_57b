@@ -1,5 +1,6 @@
 class PurchaseController < ApplicationController
   before_action :set_product, only: [:index, :done, :pay]
+  before_action :confirm
   require 'payjp'
 
   def index
@@ -45,5 +46,12 @@ class PurchaseController < ApplicationController
 
   def set_product
     @product = Product.find(params[:product_id])
+  end
+
+  def confirm
+    @transaction = Transaction.find_by(product_id: @product.id)
+    if @transaction.buyer_id != nil
+      redirect_to root_path
+    end
   end
 end
